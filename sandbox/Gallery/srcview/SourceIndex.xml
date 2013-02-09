@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<index>
+	<title>Source of FlexFlickrGallery</title>
+	<nodes>
+		<node label="src" icon="classpathIcon" expanded="true">
+			<node selected="true" label="FlexFlickrGallery.mxml" icon="mxmlAppIcon" url="source/FlexFlickrGallery.mxml.html"/>
+		</node>
+	</nodes>
+</index>
