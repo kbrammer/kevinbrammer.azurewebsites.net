@@ -23,6 +23,20 @@
   @Scripts.Render("~/Assets/javascripts/modernizr.foundation.js")
 </head>
 <body>
+  <div class="row">
+    <div class="twelve columns">
+      <ul class="nav-bar">
+        <li><a href="https://github.com/kbrammer/kevinbrammer.azurewebsites.net">Github</a></li>
+        @*<li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>*@
+      </ul>
+
+      <h1>Blog <small>This is my blog. It's awesome.</small>
+      <hr />
+    </div>
+  </div>
+
   @RenderBody()
   
   @RenderSection("scripts", required: false)

@@ -4,14 +4,17 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using MarkdownDeep;
 
 namespace site.Controllers
 {
     public class PostsController : ApiController
     {
+        
         // GET api/posts
         public IEnumerable<string> Get()
         {
+            
             return new string[] { "value1", "value2" };
         }
 
