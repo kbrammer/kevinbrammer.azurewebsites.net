@@ -27,3 +27,6 @@ C:\Users\kbrammer\Documents\GitHub\kevinbrammer.azurewebsites.net\bin\System.Web
 C:\Users\kbrammer\Documents\GitHub\kevinbrammer.azurewebsites.net\obj\Debug\site.csprojResolveAssemblyReference.cache
 C:\Users\kbrammer\Documents\GitHub\kevinbrammer.azurewebsites.net\obj\Debug\site.dll
 C:\Users\kbrammer\Documents\GitHub\kevinbrammer.azurewebsites.net\obj\Debug\site.pdb
+C:\Users\kbrammer\Documents\GitHub\kevinbrammer.azurewebsites.net\bin\MarkdownDeep.dll
+C:\Users\kbrammer\Documents\GitHub\kevinbrammer.azurewebsites.net\bin\Newtonsoft.Json.dll
+C:\Users\kbrammer\Documents\GitHub\kevinbrammer.azurewebsites.net\bin\MarkdownDeep.pdb
