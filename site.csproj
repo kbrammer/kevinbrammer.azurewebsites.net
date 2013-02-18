@@ -134,6 +134,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PostsController.cs" />
     <Compile Include="Models\Articles.cs" />
     <Compile Include="Models\Markdown.cs" />
     <Compile Include="Global.asax.cs">
@@ -150,6 +151,8 @@
     <Content Include="Assets\drafts\microsoft_html.py" />
     <Content Include="Assets\drafts\OSWalk.py" />
     <Content Include="Assets\drafts\vim.txt" />
+    <Content Include="Assets\drafts\WordSoup %282%29.py" />
+    <Content Include="Assets\drafts\WordSoup.py" />
     <Content Include="Assets\images\foundation\orbit\bullets.jpg" />
     <Content Include="Assets\images\foundation\orbit\left-arrow-small.png" />
     <Content Include="Assets\images\foundation\orbit\left-arrow.png" />
