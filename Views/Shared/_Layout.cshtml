@@ -1,16 +1,86 @@
 ﻿<!DOCTYPE html>
-<html>
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Assets/stylesheets/foundation.min.css")
+    @Styles.Render("~/Assets/stylesheets/app.css")
+    @Scripts.Render("~/Assets/javascripts/modernizr.foundation.js")
 </head>
 <body>
-    @RenderBody()
+    <div class="contain-to-grid">
+        <nav class="top-bar">
+            <ul>
+                <li class="name">
+                    <h1><a href="~/">Kevin Brammer</a></h1>
+                </li>
+                <li class="toggle-topbar"><a href="#"></a></li>
+            </ul>
+            <section>
+                <ul class="left">
+                    <li class="divider"></li>
+                    <li><a href="https://www.github.com/kbrammer">GitHub</a></li>
+                    <li class="divider"></li>
+                    <li><a href="http://www.facebook.com/kevinmatthewbrammer">Facebook</a></li>
+                    <li class="divider"></li>
+                    <li><a href="http://www.linkedin.com/in/kevinbrammer">LinkedIn</a></li>
+                    <li class="divider"></li>
+                    <li><a href="https://twitter.com/kbrammer">Twitter</a></li>
+                </ul>
 
-    @Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)
+                <ul class="right">
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </section>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="nine columns" role="content">
+            @RenderBody()
+        </div>
+        <aside class="three columns">
+            <h5>All Posts</h5>
+            <ul class="side-nav">
+                @Html.Raw(ViewBag.Menu)
+            </ul>
+            <div class="panel">
+                <h5>About Me</h5>
+                <p>I am a web developer based in Houston, Texas. I enjoy creating modern and responsive websites using ASP.NET and PHP.</p>
+                <a href="http://www.linkedin.com/in/kevinbrammer">Connect &rarr;</a>
+            </div>
+        </aside>
+    </div>
+    <footer class="row">
+        <div class="twelve columns">
+            <hr />
+            <div class="row">
+                <div class="six columns">
+                    <p>&copy;@DateTime.Now.Year Kevin Brammer. All Rights Reserved.</p>
+                </div>
+                <div class="six columns">
+                    <ul class="link-list right">
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/Assets/javascripts/jquery.js")
+    @Scripts.Render("~/Assets/javascripts/foundation.min.js")
+    @Scripts.Render("~/Assets/highlight.js/highlight.pack.js")
+    @Scripts.Render("~/Assets/javascripts/app.js")
+    @*<script>
+        $(window).load(function () {
+            $("#featured").orbit();
+        });
+    </script>*@
 </body>
 </html>

@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>packages\HtmlAgilityPack.1.4.6\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="MarkdownDeep">
       <HintPath>packages\MarkdownDeep.Full.1.5\lib\.NetFramework 3.5\MarkdownDeep.dll</HintPath>
     </Reference>
@@ -127,20 +130,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PostsController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Models\Articles.cs" />
+    <Compile Include="Models\Markdown.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\humans.txt" />
+    <Content Include="Assets\drafts\AsciiDoc_Notes.txt" />
+    <Content Include="Assets\articles\BeautifulSoup-Scraper.markdown" />
+    <Content Include="Assets\drafts\build_html.py" />
+    <Content Include="Assets\drafts\ChromeConsoleNotes.txt" />
+    <Content Include="Assets\drafts\KomodoEdit.txt" />
+    <Content Include="Assets\drafts\microsoft_html.py" />
+    <Content Include="Assets\drafts\OSWalk.py" />
+    <Content Include="Assets\drafts\vim.txt" />
     <Content Include="Assets\images\foundation\orbit\bullets.jpg" />
     <Content Include="Assets\images\foundation\orbit\left-arrow-small.png" />
     <Content Include="Assets\images\foundation\orbit\left-arrow.png" />
@@ -151,9 +160,43 @@
     <Content Include="Assets\images\foundation\orbit\right-arrow.png" />
     <Content Include="Assets\images\foundation\orbit\rotator-black.png" />
     <Content Include="Assets\images\foundation\orbit\timer-black.png" />
-    <Content Include="Assets\index.html" />
     <Content Include="Assets\javascripts\app.js" />
     <Content Include="Assets\javascripts\foundation.min.js" />
+    <Content Include="Assets\highlight.js\classref.txt" />
+    <Content Include="Assets\highlight.js\highlight.pack.js" />
+    <Content Include="Assets\highlight.js\styles\arta.css" />
+    <Content Include="Assets\highlight.js\styles\ascetic.css" />
+    <Content Include="Assets\highlight.js\styles\brown_paper.css" />
+    <Content Include="Assets\highlight.js\styles\brown_papersq.png" />
+    <Content Include="Assets\highlight.js\styles\dark.css" />
+    <Content Include="Assets\highlight.js\styles\default.css" />
+    <Content Include="Assets\highlight.js\styles\far.css" />
+    <Content Include="Assets\highlight.js\styles\github.css" />
+    <Content Include="Assets\highlight.js\styles\googlecode.css" />
+    <Content Include="Assets\highlight.js\styles\idea.css" />
+    <Content Include="Assets\highlight.js\styles\ir_black.css" />
+    <Content Include="Assets\highlight.js\styles\magula.css" />
+    <Content Include="Assets\highlight.js\styles\monokai.css" />
+    <Content Include="Assets\highlight.js\styles\pojoaque.css" />
+    <Content Include="Assets\highlight.js\styles\pojoaque.jpg" />
+    <Content Include="Assets\highlight.js\styles\rainbow.css" />
+    <Content Include="Assets\highlight.js\styles\school_book.css" />
+    <Content Include="Assets\highlight.js\styles\school_book.png" />
+    <Content Include="Assets\highlight.js\styles\solarized_dark.css" />
+    <Content Include="Assets\highlight.js\styles\solarized_light.css" />
+    <Content Include="Assets\highlight.js\styles\sunburst.css" />
+    <Content Include="Assets\highlight.js\styles\tomorrow-night-blue.css" />
+    <Content Include="Assets\highlight.js\styles\tomorrow-night-bright.css" />
+    <Content Include="Assets\highlight.js\styles\tomorrow-night-eighties.css" />
+    <Content Include="Assets\highlight.js\styles\tomorrow-night.css" />
+    <Content Include="Assets\highlight.js\styles\tomorrow.css" />
+    <Content Include="Assets\highlight.js\styles\vs.css" />
+    <Content Include="Assets\highlight.js\styles\xcode.css" />
+    <Content Include="Assets\highlight.js\styles\zenburn.css" />
+    <Content Include="Assets\javascripts\jquery-1.7.1.js" />
+    <Content Include="Assets\javascripts\jquery-1.7.1.min.js" />
+    <Content Include="Assets\javascripts\jquery-ui-1.8.20.js" />
+    <Content Include="Assets\javascripts\jquery-ui-1.8.20.min.js" />
     <Content Include="Assets\javascripts\jquery.foundation.accordion.js" />
     <Content Include="Assets\javascripts\jquery.foundation.alerts.js" />
     <Content Include="Assets\javascripts\jquery.foundation.buttons.js" />
@@ -170,92 +213,35 @@
     <Content Include="Assets\javascripts\jquery.foundation.topbar.js" />
     <Content Include="Assets\javascripts\jquery.js" />
     <Content Include="Assets\javascripts\jquery.placeholder.js" />
+    <Content Include="Assets\javascripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Assets\javascripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Assets\javascripts\jquery.validate.js" />
+    <Content Include="Assets\javascripts\jquery.validate.min.js" />
+    <Content Include="Assets\javascripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Assets\javascripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Assets\javascripts\knockout-2.1.0.debug.js" />
+    <Content Include="Assets\javascripts\knockout-2.1.0.js" />
     <Content Include="Assets\javascripts\modernizr.foundation.js" />
-    <Content Include="Assets\robots.txt" />
+    <Content Include="robots.txt" />
     <Content Include="Assets\stylesheets\app.css" />
     <Content Include="Assets\stylesheets\foundation.css" />
     <Content Include="Assets\stylesheets\foundation.min.css" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
-    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
-    <Content Include="Content\themes\base\jquery-ui.css" />
-    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
-    <Content Include="Content\themes\base\jquery.ui.all.css" />
-    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
-    <Content Include="Content\themes\base\jquery.ui.base.css" />
-    <Content Include="Content\themes\base\jquery.ui.button.css" />
-    <Content Include="Content\themes\base\jquery.ui.core.css" />
-    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
-    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
-    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
-    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
-    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
-    <Content Include="Content\themes\base\jquery.ui.slider.css" />
-    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
-    <Content Include="Content\themes\base\jquery.ui.theme.css" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
-    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
-    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
-    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
-    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
-    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
-    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="README.md" />
-    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
-    <Content Include="Scripts\jquery-1.7.1.js" />
-    <Content Include="Scripts\jquery-1.7.1.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery-ui-1.8.20.js" />
-    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\knockout-2.1.0.debug.js" />
-    <Content Include="Scripts\knockout-2.1.0.js" />
-    <Content Include="Scripts\MarkdownDeep License.txt" />
-    <Content Include="Scripts\MarkdownDeep Quick Reference.txt" />
-    <Content Include="Scripts\MarkdownDeepLib.min.js" />
-    <Content Include="Scripts\mdd_ajax_loader.gif" />
-    <Content Include="Scripts\mdd_gripper.png" />
-    <Content Include="Scripts\mdd_help.htm" />
-    <Content Include="Scripts\mdd_modal_background.png" />
-    <Content Include="Scripts\mdd_styles.css" />
-    <Content Include="Scripts\mdd_toolbar.png" />
-    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <None Include="Assets\articles\Resources.markdown" />
+    <None Include="Assets\articles\Home.markdown" />
+    <Content Include="Assets\articles\Things-I-Plan-To-Do.markdown" />
+    <None Include="Assets\articles\toc.markdown" />
+    <Content Include="Assets\mdd\MarkdownDeep License.txt" />
+    <Content Include="Assets\mdd\MarkdownDeep Quick Reference.txt" />
+    <Content Include="Assets\mdd\MarkdownDeepLib.min.js" />
+    <Content Include="Assets\mdd\mdd_ajax_loader.gif" />
+    <Content Include="Assets\mdd\mdd_gripper.png" />
+    <Content Include="Assets\mdd\mdd_help.htm" />
+    <Content Include="Assets\mdd\mdd_modal_background.png" />
+    <Content Include="Assets\mdd\mdd_styles.css" />
+    <Content Include="Assets\mdd\mdd_toolbar.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -263,35 +249,24 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Content\Site.css" />
-    <Content Include="Images\accent.png" />
-    <Content Include="Images\bullet.png" />
-    <Content Include="Images\heroAccent.png" />
-    <Content Include="Images\orderedList0.png" />
-    <Content Include="Images\orderedList1.png" />
-    <Content Include="Images\orderedList2.png" />
-    <Content Include="Images\orderedList3.png" />
-    <Content Include="Images\orderedList4.png" />
-    <Content Include="Images\orderedList5.png" />
-    <Content Include="Images\orderedList6.png" />
-    <Content Include="Images\orderedList7.png" />
-    <Content Include="Images\orderedList8.png" />
-    <Content Include="Images\orderedList9.png" />
-    <Content Include="Scripts\_references.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\_Layout-Foundation.cshtml" />
-    <Content Include="Views\Home\Foundation.cshtml" />
+    <None Include="Assets\javascripts\jquery-1.7.1.intellisense.js" />
+    <None Include="Assets\javascripts\jquery.validate-vsdoc.js" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Content Include="Assets\highlight.js\LICENSE" />
+    <Content Include="Assets\highlight.js\README.md" />
+    <Content Include="Assets\highlight.js\README.ru.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\drafts\XMLSerialization.md" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

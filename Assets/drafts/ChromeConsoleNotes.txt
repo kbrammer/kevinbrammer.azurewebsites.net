@@ -1,0 +1,103 @@
+
+
+window - console.info($R(window))
+//$(document.body)
+function $(element) {
+  if (arguments.length > 1) {
+    for (var i = 0, elements = [], length = arguments.length; i < length; i++)
+      elements.push($(arguments[i]));
+    return elements;
+  }
+  if (Object.isString(element))
+    element = document.getElementById(element);
+  return Element.extend(element);
+}
+
+//$$("iframe","a")
+function () {
+  var expression = $A(arguments).join(', ');
+  return Prototype.Selector.select(expression, document);
+}
+
+//$w("This is a string")
+//["This", "is", "a", "string"]
+function $w(string) {
+  if (!Object.isString(string)) return [];
+  string = string.strip();
+  return string ? string.split(/\s+/) : [];
+}
+------------
+$A:
+function $A(iterable) {
+  if (!iterable) return [];
+  if ('toArray' in Object(iterable)) return iterable.toArray();
+  var length = iterable.length || 0, results = new Array(length);
+  while (length--) results[length] = iterable[length];
+  return results;
+}
+
+$F:
+function (element) {
+    element = $(element);
+    var method = element.tagName.toLowerCase();
+    return Form.Element.Serializers[method](element);
+  }
+
+$H:
+function $H(object) {
+  return new Hash(object);
+}
+
+$R:
+function $R(start, end, exclusive) {
+  return new ObjectRange(start, end, exclusive);
+}
+
+$break: Object
+$continue: Error
+
+
+All Panels
+<Ctrl>+]/<Ctrl>+[:Go to the panel to the left/right
+<Ctrl>+<Alt>+[/<Ctrl>+<Alt>+]:Go back/forward in panel history
+<Esc>:Toggle console
+<Ctrl>+F:Search
+<Ctrl>+<Shift>+F:Search across all sources
+<Ctrl>+O:Go to source
+<Ctrl>+G:Go to line
+
+Console
+<Ctrl>+L:Clear console
+<Tab>/<Shift>+<Tab>:Next/previous suggestion
+<Right>:Accept suggestion
+<Down>/<Up>:Next/previous line
+<Enter>:Execute command
+
+Elements Panel
+<Up>/<Down>:Navigate elements
+<Right>/<Left>:Expand/collapse
+<Enter>:Edit attribute
+F2:Toggle edit as HTML
+
+Styles Pane
+<Tab>/<Shift>+<Tab>:Next/previous property
+<Up>/<Down>:Increment/decrement value
+<Shift>+<Up>/<Shift>+<Down>:Increment/decrement by 10
+<PageUp>/<PageDown>:Increment/decrement by 10
+<Shift>+<PageUp>/<Shift>+<PageDown>:Increment/decrement by 100
+<Alt>+<PageUp>/<Alt>+<PageDown>:Increment/decrement by 0.1
+
+Sources Panel
+F8or<Ctrl>+/:Pause/Continue
+F10or<Ctrl>+':Step over
+F11or<Ctrl>+;:Step into
+<Shift>+F11or<Ctrl>+<Shift>+;:Step out
+<Ctrl>+./<Ctrl>+,:Next/previous call frame
+<Ctrl>+<Shift>+E:Evaluate selection in console
+<Ctrl>+<Shift>+O:Go to member
+<Ctrl>+B:Toggle breakpoint
+
+Timeline Panel
+<Ctrl>+E:Start/stop recording
+<Ctrl>+S:Save timeline data
+<Ctrl>+O:Load timeline data

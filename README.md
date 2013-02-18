@@ -1,3 +1,4 @@
-﻿# Read Me
+﻿# kevinbrammer.azurewebsites.net
+## ASP.NET MVC Markdown Blog
 
-Windows Azure site - attempting to build out blog idea... please remain seated.
+Repo Windows Azure site - attempting to build out blog idea... please remain seated.

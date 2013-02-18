@@ -1,29 +1,66 @@
-/* Artfully masterminded by ZURB  */
-
-/* -------------------------------------------------- 
-   Table of Contents
------------------------------------------------------
-:: Shared Styles
-:: Page Name 1
-:: Page Name 2
-*/
-
-
 /* -----------------------------------------
    Shared Styles
 ----------------------------------------- */
+body { background: white; font-family: "Segoe UI", "Times New Roman", Times, serif; font-weight: normal; font-style: normal; font-size: 14px; line-height: 1; color: #222222; position: relative; -webkit-font-smoothing: antialiased; }
 
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td { margin: 0; padding: 0; font-size: 14px; direction: ltr; }
 
+p { font-family: inherit; font-weight: normal; font-size: 16px; line-height: 1.6; margin-bottom: 17px; }
+    p.lead { font-size: 19.5px; line-height: 1.6; margin-bottom: 17px; }
 
-/* -----------------------------------------
-   Page Name 1
------------------------------------------ */
+article ul, ol, dl { margin: 0 0 17px 20px;}
 
+/* Sidebar */
+aside p { font-size: 13px; line-height: 1.35; font-style: italic; }
+aside ul.side-nav { display: block; list-style: none; margin: 0; padding: 0 0 17px 0; }
 
+/* Headings */
+h1, h2, h3, h4, h5, h6 { font-family: "Segoe UI", "Times New Roman", Times, serif; font-weight: normal; font-style: normal; color: #C92434; text-rendering: optimizeLegibility; line-height: 1.1; margin-bottom: 14px; margin-top: 14px; }
+.article h1, aside h5 { border-bottom: 1px solid #dadada; }
+    h1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-size: 60%; color: #6f6f6f; line-height: 0; }
+h1 { font-size: 34px; }
+h2 { font-size: 27px; }
+h3 { font-size: 23px; }
+h4 { font-size: 19px; }
+h5 { font-size: 17px; }
+h6 { font-size: 14px; }
 
+/* Preformatted text - CakePHP */
+code { background: none; }
+pre, code { font-family: "Bitstream Vera Sans Mono", "Consolas", "Monaco", monospace; font-weight:normal;}
+pre { margin-bottom: 18px; overflow-x: auto; padding: 8px; background: #f2f2f2; color: #222; line-height: 120%; -moz-box-shadow: inset 0px 1px 4px rgba(0,0,0,0.15); -webkit-box-shadow: inset 0px 1px 4px rgba(0,0,0,0.15); box-shadow: inset 0px 1px 4px rgba(0,0,0,0.15); }
+    pre::-webkit-scrollbar { height: 10px; }
+    pre::-webkit-scrollbar-track-piece { background: #ddd; border-radius: 5px; -webkit-border-radius: 5px; }
+    pre::-webkit-scrollbar-thumb:horizontal { background: #c0c0c0; border-radius: 5px; -webkit-border-radius: 5px; }
 
-/* -----------------------------------------
-   Page Name 2
------------------------------------------ */
+/* highlight js github */
+pre .comment, pre .annotation, pre .template_comment, pre .diff .header, pre .chunk, pre .apache .cbracket { color: rgb(0, 128, 0); }
+pre .keyword, pre .id, pre .built_in, pre .smalltalk .class, pre .winutils, pre .bash .variable, pre .tex .command, pre .request, pre .status, pre .nginx .title, pre .xml .tag, pre .xml .tag .value { color: rgb(0, 0, 255); }
+pre .string, pre .title, pre .parent, pre .tag .value, pre .rules .value, pre .rules .value .number, pre .ruby .symbol, pre .ruby .symbol .string, pre .aggregate, pre .template_tag, pre .django .variable, pre .addition, pre .flow, pre .stream, pre .apache .tag, pre .date, pre .tex .formula { color: rgb(163, 21, 21); }
+pre .ruby .string, pre .decorator, pre .filter .argument, pre .localvars, pre .array, pre .attr_selector, pre .pseudo, pre .pi, pre .doctype, pre .deletion, pre .envvar, pre .shebang, pre .preprocessor, pre .userType, pre .apache .sqbracket, pre .nginx .built_in, pre .tex .special, pre .prompt { color: rgb(43, 145, 175); }
+pre .phpdoc, pre .javadoc, pre .xmlDocTag { color: rgb(128, 128, 128); }
+pre .vhdl .typename { font-weight: bold; }
+pre .vhdl .string { color: #666666; }
+pre .vhdl .literal { color: rgb(163, 21, 21); }
+pre .vhdl .attribute { color: #00B0E8; }
+pre .xml .attribute { color: rgb(255, 0, 0); }
 
+/* Header */
 
+.top-bar, .contain-to-grid { background: #eaeaea; background-image: -moz-linear-gradient(#fafafa, #eaeaea); background-image: -webkit-linear-gradient(#fafafa, #eaeaea); background-image: linear-gradient(#fafafa, #eaeaea); background-repeat: repeat-x; text-shadow: 0 1px 0 #fff; }
+.contain-to-grid { border-bottom: 1px solid #e5e5e5; }
+.top-bar > ul .name h1 { line-height: 45px; margin: 0; }
+.top-bar > ul .name h1 a { font-weight: bold; padding: 0 22.5px; font-size: 17px !important; }
+.top-bar > ul .name img { margin-top: -5px; vertical-align: middle; }
+
+.top-bar ul > li a:not(.button) { color: #333333; -moz-transition: all 0.1s ease-in 0; -webkit-transition: all 0.1s ease-in 0; }
+.top-bar ul > li a:not(.button):hover { color: rgba(65,131,196,0.4); text-decoration: none; }
+
+.top-bar ul > li:not(.name):hover, .top-bar ul > li:not(.name).active, .top-bar ul > li:not(.name):focus { background: inherit; }
+.top-bar ul > li:not(.name):hover a, .top-bar ul > li:not(.name).active a, .top-bar ul > li:not(.name):focus a { color: rgba(65,131,196,0.4); }
+
+.top-bar ul > li.divider { background: #e5e5e5; -webkit-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1); -moz-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1); box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1); height: 100%; margin-right: 1px; width: 1px; }
+
+.top-bar ul > li.has-button a.button { margin: 0 11.25px; }
+.top-bar ul > li.has-button:hover, .top-bar ul > li.has-button:focus { background: inherit; }
+.top-bar ul > li.has-button:hover a, .top-bar ul > li.has-button:focus a { color: #eaeaea; }

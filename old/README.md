@@ -1,4 +1,0 @@
-kevinbrammer.azurewebsites.net
-==============================
-
-Blog

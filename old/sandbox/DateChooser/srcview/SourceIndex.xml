@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<index>
-	<title>Source of ExtendedDateChooser</title>
-	<nodes>
-		<node label="src" icon="classpathIcon" expanded="true">
-			<node selected="true" label="ExtendedDateChooser.mxml" icon="mxmlAppIcon" url="source/ExtendedDateChooser.mxml.html"/>
-		</node>
-	</nodes>
-</index>

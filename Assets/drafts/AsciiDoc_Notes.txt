@@ -1,0 +1,23 @@
+= Asciidoc
+
+== Links
+http://localhost/utils/asciidoc/doc/asciidoc.html[AsciiDoc Example Doc]
+
+== Snippets
+.Komodo Edit Run commands
+----
+%(python)  C:\inetpub\wwwroot\utils\asciidoc\asciidoc.py "%F"
+%(python)  C:\Users\kbrammer\AppData\Roaming\Python\Scripts\pywatch "C:\inetpub\wwwroot\utils\asciidoc\asciidoc.py %F" %F
+----
+
+Python Watch Package::
+`C:\Users\kbrammer\AppData\Roaming\Python\Python27\site-packages\pywatch`
+
+.Komodo Edit Macro Snippets
+----
+ko.run.runEncodedCommand(window, '%(python)  C:\\Users\\kbrammer\\AppData\\Roaming\\Python\\Scripts\\pywatch \"C:\\inetpub\\wwwroot\\utils\\asciidoc\\asciidoc.py %F\" %F {\'insertOutput\': True, \'operateOnSelection\': True}');
+ko.run.runEncodedCommand(window, '%(python)  C:\\Users\\kbrammer\\AppData\\Roaming\\Python\\Scripts\\pywatch \"C:\\inetpub\\wwwroot\\utils\\asciidoc\\asciidoc.py %F\" %F');
+ko.commands.doCommand('cmd_browserPreview') 
+ko.open.URI("scp:///host.example.org/home/user/file.txt#11");
+ko.browse.openUrlInDefaultBrowser("","chrome")
+----
