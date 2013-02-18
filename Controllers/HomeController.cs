@@ -10,16 +10,8 @@ namespace site.Controllers
 {
     public class HomeController : Controller
     {
-<<<<<<< HEAD
-        
-        private WebClient client = new WebClient();
-        private Markdown md = new Markdown();
-
-        public ActionResult Index()
-=======
 
         public ActionResult Index(string title)
->>>>>>> updated theme and controllers
         {
 
             if (string.IsNullOrEmpty(title))

@@ -27,9 +27,9 @@ C:\Users\kbrammer\Documents\GitHub\kevinbrammer.azurewebsites.net\bin\System.Web
 C:\Users\kbrammer\Documents\GitHub\kevinbrammer.azurewebsites.net\bin\System.Web.WebPages.xml
 C:\Users\kbrammer\Documents\GitHub\kevinbrammer.azurewebsites.net\bin\System.Web.WebPages.Deployment.xml
 C:\Users\kbrammer\Documents\GitHub\kevinbrammer.azurewebsites.net\bin\System.Web.WebPages.Razor.xml
-C:\Users\kbrammer\Documents\GitHub\kevinbrammer.azurewebsites.net\obj\Release\site.csprojResolveAssemblyReference.cache
 C:\Users\kbrammer\Documents\GitHub\kevinbrammer.azurewebsites.net\obj\Release\site.dll
 C:\Users\kbrammer\Documents\GitHub\kevinbrammer.azurewebsites.net\obj\Release\site.pdb
 C:\Users\kbrammer\Documents\GitHub\kevinbrammer.azurewebsites.net\bin\HtmlAgilityPack.dll
 C:\Users\kbrammer\Documents\GitHub\kevinbrammer.azurewebsites.net\bin\HtmlAgilityPack.pdb
 C:\Users\kbrammer\Documents\GitHub\kevinbrammer.azurewebsites.net\bin\HtmlAgilityPack.xml
+C:\Users\kbrammer\Documents\GitHub\kevinbrammer.azurewebsites.net\bin\Newtonsoft.Json.xml
