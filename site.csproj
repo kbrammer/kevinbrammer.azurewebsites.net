@@ -153,6 +153,13 @@
     <Content Include="Assets\drafts\vim.txt" />
     <Content Include="Assets\drafts\WordSoup %282%29.py" />
     <Content Include="Assets\drafts\WordSoup.py" />
+    <Content Include="Assets\images\articles\062112_0427_Ivespentmuc1.png" />
+    <Content Include="Assets\images\articles\062112_0427_Ivespentmuc2.png" />
+    <Content Include="Assets\images\articles\062112_0427_Ivespentmuc3.png" />
+    <Content Include="Assets\images\articles\062112_0427_Ivespentmuc4.png" />
+    <Content Include="Assets\images\articles\062112_0427_Ivespentmuc5.png" />
+    <Content Include="Assets\images\articles\062112_0427_Ivespentmuc6.png" />
+    <Content Include="Assets\images\articles\062112_0427_Ivespentmuc7.png" />
     <Content Include="Assets\images\foundation\orbit\bullets.jpg" />
     <Content Include="Assets\images\foundation\orbit\left-arrow-small.png" />
     <Content Include="Assets\images\foundation\orbit\left-arrow.png" />
@@ -163,8 +170,29 @@
     <Content Include="Assets\images\foundation\orbit\right-arrow.png" />
     <Content Include="Assets\images\foundation\orbit\rotator-black.png" />
     <Content Include="Assets\images\foundation\orbit\timer-black.png" />
-    <Content Include="Assets\javascripts\app.js" />
-    <Content Include="Assets\javascripts\foundation.min.js" />
+    <Content Include="Assets\javascripts\foundation\app.js" />
+    <Content Include="Assets\javascripts\foundation\jquery.cookie.js" />
+    <Content Include="Assets\javascripts\foundation\jquery.event.move.js" />
+    <Content Include="Assets\javascripts\foundation\jquery.event.swipe.js" />
+    <Content Include="Assets\javascripts\foundation\jquery.foundation.accordion.js" />
+    <Content Include="Assets\javascripts\foundation\jquery.foundation.alerts.js" />
+    <Content Include="Assets\javascripts\foundation\jquery.foundation.buttons.js" />
+    <Content Include="Assets\javascripts\foundation\jquery.foundation.clearing.js" />
+    <Content Include="Assets\javascripts\foundation\jquery.foundation.forms.js" />
+    <Content Include="Assets\javascripts\foundation\jquery.foundation.joyride.js" />
+    <Content Include="Assets\javascripts\foundation\jquery.foundation.magellan.js" />
+    <Content Include="Assets\javascripts\foundation\jquery.foundation.mediaQueryToggle.js" />
+    <Content Include="Assets\javascripts\foundation\jquery.foundation.navigation.js" />
+    <Content Include="Assets\javascripts\foundation\jquery.foundation.orbit.js" />
+    <Content Include="Assets\javascripts\foundation\jquery.foundation.reveal.js" />
+    <Content Include="Assets\javascripts\foundation\jquery.foundation.tabs.js" />
+    <Content Include="Assets\javascripts\foundation\jquery.foundation.tooltips.js" />
+    <Content Include="Assets\javascripts\foundation\jquery.foundation.topbar.js" />
+    <Content Include="Assets\javascripts\foundation\jquery.js" />
+    <Content Include="Assets\javascripts\foundation\jquery.offcanvas.js" />
+    <Content Include="Assets\javascripts\foundation\jquery.placeholder.js" />
+    <Content Include="Assets\javascripts\foundation\modernizr.foundation.js" />
+    <Content Include="Assets\javascripts\main.js" />
     <Content Include="Assets\highlight.js\classref.txt" />
     <Content Include="Assets\highlight.js\highlight.pack.js" />
     <Content Include="Assets\highlight.js\styles\arta.css" />
@@ -196,39 +224,14 @@
     <Content Include="Assets\highlight.js\styles\vs.css" />
     <Content Include="Assets\highlight.js\styles\xcode.css" />
     <Content Include="Assets\highlight.js\styles\zenburn.css" />
-    <Content Include="Assets\javascripts\jquery-1.7.1.js" />
-    <Content Include="Assets\javascripts\jquery-1.7.1.min.js" />
-    <Content Include="Assets\javascripts\jquery-ui-1.8.20.js" />
-    <Content Include="Assets\javascripts\jquery-ui-1.8.20.min.js" />
-    <Content Include="Assets\javascripts\jquery.foundation.accordion.js" />
-    <Content Include="Assets\javascripts\jquery.foundation.alerts.js" />
-    <Content Include="Assets\javascripts\jquery.foundation.buttons.js" />
-    <Content Include="Assets\javascripts\jquery.foundation.clearing.js" />
-    <Content Include="Assets\javascripts\jquery.foundation.forms.js" />
-    <Content Include="Assets\javascripts\jquery.foundation.joyride.js" />
-    <Content Include="Assets\javascripts\jquery.foundation.magellan.js" />
-    <Content Include="Assets\javascripts\jquery.foundation.mediaQueryToggle.js" />
-    <Content Include="Assets\javascripts\jquery.foundation.navigation.js" />
-    <Content Include="Assets\javascripts\jquery.foundation.orbit.js" />
-    <Content Include="Assets\javascripts\jquery.foundation.reveal.js" />
-    <Content Include="Assets\javascripts\jquery.foundation.tabs.js" />
-    <Content Include="Assets\javascripts\jquery.foundation.tooltips.js" />
-    <Content Include="Assets\javascripts\jquery.foundation.topbar.js" />
-    <Content Include="Assets\javascripts\jquery.js" />
-    <Content Include="Assets\javascripts\jquery.placeholder.js" />
-    <Content Include="Assets\javascripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="Assets\javascripts\jquery.unobtrusive-ajax.min.js" />
-    <Content Include="Assets\javascripts\jquery.validate.js" />
-    <Content Include="Assets\javascripts\jquery.validate.min.js" />
-    <Content Include="Assets\javascripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Assets\javascripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Assets\javascripts\knockout-2.1.0.debug.js" />
     <Content Include="Assets\javascripts\knockout-2.1.0.js" />
-    <Content Include="Assets\javascripts\modernizr.foundation.js" />
-    <Content Include="robots.txt" />
     <Content Include="Assets\stylesheets\app.css" />
-    <Content Include="Assets\stylesheets\foundation.css" />
-    <Content Include="Assets\stylesheets\foundation.min.css" />
+    <Content Include="humans.txt" />
+    <Content Include="index.html" />
+    <Content Include="MIT-LICENSE.txt" />
+    <Content Include="robots.txt" />
+    <Content Include="Assets\stylesheets\main.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="README.md" />
@@ -245,6 +248,7 @@
     <Content Include="Assets\mdd\mdd_modal_background.png" />
     <Content Include="Assets\mdd\mdd_styles.css" />
     <Content Include="Assets\mdd\mdd_toolbar.png" />
+    <Content Include="robots.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -257,8 +261,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <None Include="Assets\javascripts\jquery-1.7.1.intellisense.js" />
-    <None Include="Assets\javascripts\jquery.validate-vsdoc.js" />
+    <Content Include="sass\app.scss" />
+    <Content Include="sass\_settings.scss" />
+    <Content Include="config.rb" />
+    <Content Include="sass\_foundation-settings.scss" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\highlight.js\LICENSE" />
@@ -270,6 +276,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\drafts\XMLSerialization.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,124 @@
+@import "foundation/common/ratios";
+
+// Grid Settings
+// $rowWidth: 1000px;
+// $columnGutter: 30px;
+// $totalColumns: 12;
+// $mobileTotalColumns: 4;
+// $blockGridElements: 12; // Highest number of block grid elements, Maximum of 24 supported
+
+// Colors Settings
+// $mainColor: #2ba6cb;
+// $secondaryColor: #e9e9e9;
+// $alertColor: #c60f13;
+// $successColor: #5da423;
+// $txtColor: #222;
+$highlightColor: none;
+// $black: #000;
+// $white: #fff;
+// $shinyEdge: rgba(#fff, .5);
+// $darkEdge: rgba(#000, .2);
+
+// Font Settings
+$fontSmoothing: antialiased;
+$headerFontFamily: "Segoe UI", "Times New Roman", Times, serif;
+$headerFontWeight: normal;
+// $headerFontStyle: normal;
+$headerFontColor: #C92434;
+$bodyFontFamily: "Segoe UI", "Times New Roman", Times, serif;
+// $bodyFontWeight: normal;
+// $bodyFontStyle: normal;
+// $bodyFontColor: $txtColor;
+h1 { font-size: 34px!important; }
+h2 { font-size: 27px!important; }
+h3 { font-size: 23px!important; }
+h4 { font-size: 19px!important; }
+h5 { font-size: 17px!important; }
+h6 { font-size: 14px!important; }
+.article h1, aside h5 { border-bottom: 1px solid #dadada; }
+aside h5 { margin-bottom:0; }
+
+// Top Bar Settings
+//--------------------------------------------
+$topBarBgColor: #eaeaea;
+$topBarHeight: 40px;
+$topBarHeightMobile: 40px;
+$topBarBtmMargin: 30px;
+// $topBarTitleWeight: bold;
+// $topBarTitleSize: 17px;
+$topBarLinkColor: #333333;
+// $topBarLinkWeight: bold;
+// $topBarLinkSize: 13px;
+// $topBarDropBgColor: #222;
+$topBarDropLinkColor: #333333; 
+// $topBarDropToggleSize: 5px;
+// $topBarDropToggleColor: #fff;
+// $topBarDropToggleAlpha: 0.5;
+// $topBarSearchWidth: 200px;
+// $topBarBreakPoint: 940px; // Change to 9999px for always mobile layout
+// $topBarNavToggleSize: 8px;
+// $topBarNavToggleColor: #fff;
+
+div.contain-to-grid, nav.top-bar, {
+ background-image: -moz-linear-gradient(#fafafa, #eaeaea); background-image: -webkit-linear-gradient(#fafafa, #eaeaea); background-image: linear-gradient(#fafafa, #eaeaea); background-repeat: repeat-x; text-shadow: 0 1px 0 #fff;
+}
+
+div.contain-to-grid { border-bottom: 1px solid #e5e5e5; }
+
+nav.top-bar {
+	ul > li a:not(.button) { -moz-transition: all 0.1s ease-in 0; -webkit-transition: all 0.1s ease-in 0; }
+	ul > li a:not(.button):hover { color: rgba(65,131,196,0.4); text-decoration: none; }
+
+	ul > li:not(.name):hover, 
+	ul > li:not(.name).active, 
+	ul > li:not(.name):focus { background: inherit; }
+
+	ul > li:not(.name):hover a, 
+	ul > li:not(.name).active a, 
+	ul > li:not(.name):focus a { color: rgba(65,131,196,0.4); }
+
+	ul > li.divider { background: #e5e5e5; -webkit-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1); -moz-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1); box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1); }
+
+	ul > li.has-button:hover, 
+	ul > li.has-button:focus { background: inherit; }
+
+	ul > li.has-button:hover a, 
+	ul > li.has-button:focus a { color: #eaeaea; }
+}
+
+//-----------------------------------
+//.row { background-color:#fff; }
+
+//------------------------------------
+/* Preformatted text - CakePHP */
+/* highlight js github */    
+pre {
+	margin-bottom: 18px!important;
+	padding: 8px!important;
+	line-height: 120%!important;
+	overflow-x: auto;
+	background: #f2f2f2;
+	-moz-box-shadow: inset 0px 1px 4px rgba(0,0,0,0.15); 
+	-webkit-box-shadow: inset 0px 1px 4px rgba(0,0,0,0.15); 
+	box-shadow: inset 0px 1px 4px rgba(0,0,0,0.15); 
+
+	.comment, .annotation, .template_comment, .diff .header, .chunk, .apache .cbracket { color: rgb(0, 128, 0); }
+	.keyword, .id, .built_in, .smalltalk .class, .winutils, .bash .variable, .tex .command, .request, .status, .nginx .title, .xml .tag, .xml .tag .value { color: rgb(0, 0, 255); }
+	.string, .title, .parent, .tag .value, .rules .value, .rules .value .number, .ruby .symbol, .ruby .symbol .string, .aggregate, .template_tag, .django .variable, .addition, .flow, .stream, .apache .tag, .date, .tex .formula { color: rgb(163, 21, 21); }
+	.ruby .string, .decorator, .filter .argument, .localvars, .array, .attr_selector, .pseudo, .pi, .doctype, .deletion, .envvar, .shebang, .preprocessor, .userType, .apache .sqbracket, .nginx .built_in, .tex .special, .prompt { color: rgb(43, 145, 175); }
+	.phpdoc, .javadoc, .xmlDocTag { color: rgb(128, 128, 128); }
+	.vhdl .typename { font-weight: bold; }
+	.vhdl .string { color: #666666; }
+	.vhdl .literal { color: rgb(163, 21, 21); }
+	.vhdl .attribute { color: #00B0E8; }
+	.xml .attribute { color: rgb(255, 0, 0); }
+}
+pre::-webkit-scrollbar { height: 10px; }
+pre::-webkit-scrollbar-track-piece { background: #ddd; border-radius: 5px; -webkit-border-radius: 5px; }
+pre::-webkit-scrollbar-thumb:horizontal { background: #c0c0c0; border-radius: 5px; -webkit-border-radius: 5px; }
+code { font-family: "Bitstream Vera Sans Mono", "Consolas", "Monaco", monospace; font-weight:normal;  color: #222;  }
+
+// Lists
+article ul, ol, dl { margin: 0 0 17px 20px;}
+
+.panel { background-color:#fff!important;}

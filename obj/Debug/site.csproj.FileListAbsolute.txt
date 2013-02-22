@@ -67,3 +67,6 @@ C:\Users\kbrammer\Documents\GitHub\kevinbrammer.azurewebsites.net\bin\System.Web
 C:\Users\kbrammer\Documents\GitHub\kevinbrammer.azurewebsites.net\obj\Debug\site.csprojResolveAssemblyReference.cache
 C:\Users\kbrammer\Documents\GitHub\kevinbrammer.azurewebsites.net\obj\Debug\site.dll
 C:\Users\kbrammer\Documents\GitHub\kevinbrammer.azurewebsites.net\obj\Debug\site.pdb
+C:\Users\Kevin Brammer\Documents\GitHub\kevinbrammer.azurewebsites.net\bin\HtmlAgilityPack.dll
+C:\Users\Kevin Brammer\Documents\GitHub\kevinbrammer.azurewebsites.net\bin\HtmlAgilityPack.pdb
+C:\Users\Kevin Brammer\Documents\GitHub\kevinbrammer.azurewebsites.net\bin\HtmlAgilityPack.xml

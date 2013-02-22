@@ -40,6 +40,7 @@ namespace site.Models
             {
                 string page = HttpContext.Current.Server.MapPath(string.Format("~/Assets/Articles/{0}.markdown", title));
                 string article = System.IO.File.ReadAllText(page);
+
                 return Markdown.Render(article);
             }
             catch (Exception ex)

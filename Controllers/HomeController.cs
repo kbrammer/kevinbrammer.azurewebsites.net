@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using site.Models;
 
-
 namespace site.Controllers
 {
     public class HomeController : Controller

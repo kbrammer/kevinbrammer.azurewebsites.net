@@ -7,9 +7,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Assets/stylesheets/foundation.min.css")
     @Styles.Render("~/Assets/stylesheets/app.css")
-    @Scripts.Render("~/Assets/javascripts/modernizr.foundation.js")
+    @Scripts.Render("~/Assets/javascripts/foundation/modernizr.foundation.js")
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
     <div class="contain-to-grid">
@@ -32,14 +32,14 @@
                     <li><a href="https://twitter.com/kbrammer">Twitter</a></li>
                 </ul>
 
-                <ul class="right">
+                @*<ul class="right">
                     <li><a href="#">Contact</a></li>
-                </ul>
+                </ul>*@
             </section>
         </nav>
     </div>
     <div class="row">
-        <div class="nine columns" role="content">
+        <div class="nine columns" id="content">
             @RenderBody()
         </div>
         <aside class="three columns">
@@ -47,40 +47,76 @@
             <ul class="side-nav">
                 @Html.Raw(ViewBag.Menu)
             </ul>
-            <div class="panel">
-                <h5>About Me</h5>
-                <p>I am a web developer based in Houston, Texas. I enjoy creating modern and responsive websites using ASP.NET and PHP.</p>
-                <a href="http://www.linkedin.com/in/kevinbrammer">Connect &rarr;</a>
-            </div>
+            
+            <h5>About Me</h5>
+            <p>I am addicted to JavaScript, C#, Sass and Foundation... although I occassionaly get caught staying out too late with PHP, Ruby, Python and the occasional shell script...</p>
         </aside>
     </div>
     <footer class="row">
         <div class="twelve columns">
             <hr />
             <div class="row">
-                <div class="six columns">
-                    <p>&copy;@DateTime.Now.Year Kevin Brammer. All Rights Reserved.</p>
+                <div class="twelve columns">
+                    <p>&copy;@DateTime.Now.Year Kevin Brammer</p>
                 </div>
-                <div class="six columns">
+                @*<div class="six columns">
                     <ul class="link-list right">
                         <li><a href="#">Link 1</a></li>
                         <li><a href="#">Link 2</a></li>
                         <li><a href="#">Link 3</a></li>
                         <li><a href="#">Link 4</a></li>
                     </ul>
-                </div>
+                </div>*@
             </div>
         </div>
     </footer>
 
-    @Scripts.Render("~/Assets/javascripts/jquery.js")
-    @Scripts.Render("~/Assets/javascripts/foundation.min.js")
+    @Scripts.Render("~/Assets/javascripts/foundation/jquery.js")
+    
+    @Scripts.Render("~/Assets/javascripts/foundation/jquery.js")
+	
+	@Scripts.Render("~/Assets/javascripts/foundation/jquery.cookie.js")
+	
+	@Scripts.Render("~/Assets/javascripts/foundation/jquery.event.move.js")
+	
+	@Scripts.Render("~/Assets/javascripts/foundation/jquery.event.swipe.js")
+	
+	@Scripts.Render("~/Assets/javascripts/foundation/jquery.foundation.accordion.js")
+	
+	@Scripts.Render("~/Assets/javascripts/foundation/jquery.foundation.alerts.js")
+	
+	@Scripts.Render("~/Assets/javascripts/foundation/jquery.foundation.buttons.js")
+	
+	@Scripts.Render("~/Assets/javascripts/foundation/jquery.foundation.clearing.js")
+	
+	@Scripts.Render("~/Assets/javascripts/foundation/jquery.foundation.forms.js")
+	
+	@Scripts.Render("~/Assets/javascripts/foundation/jquery.foundation.joyride.js")
+	
+	@Scripts.Render("~/Assets/javascripts/foundation/jquery.foundation.magellan.js")
+	
+	@Scripts.Render("~/Assets/javascripts/foundation/jquery.foundation.mediaQueryToggle.js")
+	
+	@Scripts.Render("~/Assets/javascripts/foundation/jquery.foundation.navigation.js")
+	
+	@Scripts.Render("~/Assets/javascripts/foundation/jquery.foundation.orbit.js")
+	
+	@Scripts.Render("~/Assets/javascripts/foundation/jquery.foundation.reveal.js")
+	
+	@Scripts.Render("~/Assets/javascripts/foundation/jquery.foundation.tabs.js")
+	
+	@Scripts.Render("~/Assets/javascripts/foundation/jquery.foundation.tooltips.js")
+	
+	@Scripts.Render("~/Assets/javascripts/foundation/jquery.foundation.topbar.js")
+
+	@Scripts.Render("~/Assets/javascripts/foundation/jquery.placeholder.js")
+
     @Scripts.Render("~/Assets/highlight.js/highlight.pack.js")
-    @Scripts.Render("~/Assets/javascripts/app.js")
-    @*<script>
+    @Scripts.Render("~/Assets/javascripts/main.js")
+    <script>
         $(window).load(function () {
             $("#featured").orbit();
         });
-    </script>*@
+    </script>
 </body>
 </html>
