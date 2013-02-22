@@ -1,8 +1,9 @@
 # Using HtmlAgilityPack With Powershell
 
-I started experimenting with using assemblies in the Powershell ISE and just discovered an 
-awesome way to grab HTML from a website using [HtmlAgilityPack](http://htmlagilitypack.codeplex.com). Make sure 
-to include the full path to your assembly:
+I started experimenting with using assemblies in the Powershell ISE, and just discovered an 
+awesome way to grab HTML from a website using [HtmlAgilityPack](http://htmlagilitypack.codeplex.com)!!
+
+Don't forget to include the full path to your assembly:
 
     [Reflection.Assembly]::LoadFile("C:\Users\...\...\Assemblies\HtmlAgilityPack.dll”)
     [HtmlAgilityPack.HtmlWeb]$web = @{}
