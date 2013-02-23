@@ -228,7 +228,6 @@
     <Content Include="Assets\javascripts\knockout-2.1.0.js" />
     <Content Include="Assets\stylesheets\app.css" />
     <Content Include="humans.txt" />
-    <Content Include="index.html" />
     <Content Include="MIT-LICENSE.txt" />
     <Content Include="robots.txt" />
     <Content Include="Assets\stylesheets\main.css" />
