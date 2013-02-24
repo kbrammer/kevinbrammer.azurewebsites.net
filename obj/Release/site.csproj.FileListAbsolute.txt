@@ -72,3 +72,4 @@ C:\Users\Kevin Brammer\Documents\GitHub\kevinbrammer.azurewebsites.net\bin\Syste
 C:\Users\Kevin Brammer\Documents\GitHub\kevinbrammer.azurewebsites.net\bin\System.Web.WebPages.Razor.xml
 C:\Users\Kevin Brammer\Documents\GitHub\kevinbrammer.azurewebsites.net\obj\Release\site.dll
 C:\Users\Kevin Brammer\Documents\GitHub\kevinbrammer.azurewebsites.net\obj\Release\site.pdb
+C:\Users\Kevin Brammer\Documents\GitHub\kevinbrammer.azurewebsites.net\obj\Release\site.csprojResolveAssemblyReference.cache

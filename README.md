@@ -6,8 +6,10 @@ This project intends to be a (hopefully) simple, straightforward Markdown bloggi
 
 ## Features
 
-- Posts committed to GitHub are automatically deployed to Azure
-- Uses MarkdownDeep to render the markdown into HTML
-- Uses Highlight.js for syntax highlighting code
-- Uses Zurb Foundation for responsive layouts
-- Uses Sass for stylesheet customization
+- Automatic deployments to Windows Azure
+- MarkdownDeep rendered markdown
+- Highlight.js syntax highlighting
+- Zurb Foundation responsive layout
+- Sass/Compass
+- Commenting with Disqus
+

@@ -279,10 +279,6 @@
     <Content Include="config.rb" />
     <Content Include="sass\_foundation-settings.scss" />
     <Content Include="Views\Articles\Index.cshtml" />
-    <Content Include="kevinbrammer.azurewebsites.net.wiki\Home.md" />
-    <Content Include="kevinbrammer.azurewebsites.net.wiki\JSON-and-httpie-in-Powershell.md" />
-    <Content Include="kevinbrammer.azurewebsites.net.wiki\Using-HtmlAgilityPack-With-Powershell.md" />
-    <Content Include="kevinbrammer.azurewebsites.net.wiki\Scraping-HTML-using-Python-and-BeautifulSoup.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\highlight.js\LICENSE" />
@@ -291,6 +287,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Docs\Home.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Docs\JSON-and-httpie-in-Powershell.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Docs\Scraping-HTML-using-Python-and-BeautifulSoup.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Docs\Using-HtmlAgilityPack-With-Powershell.md" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
