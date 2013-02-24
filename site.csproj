@@ -39,6 +39,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Argotic.Common">
+      <HintPath>packages\Argotic.Common.2008.0.2.0\lib\Net35\Argotic.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Argotic.Core">
+      <HintPath>packages\Argotic.Core.2008.0.2.0\lib\Net35\Argotic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Argotic.Extensions">
+      <HintPath>packages\Argotic.Extensions.2008.0.2.0\lib\Net35\Argotic.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Argotic.Web">
+      <HintPath>packages\Argotic.Web.2008.0.2.0\lib\Net35\Argotic.Web.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlAgilityPack">
       <HintPath>packages\HtmlAgilityPack.1.4.6\lib\Net40\HtmlAgilityPack.dll</HintPath>
     </Reference>
@@ -130,29 +142,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PostsController.cs" />
-    <Compile Include="Models\Articles.cs" />
-    <Compile Include="Models\Markdown.cs" />
+    <Compile Include="Controllers\GitHubAPIController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Article.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Blog.cs" />
+    <Compile Include="Models\Menu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\drafts\AsciiDoc_Notes.txt" />
-    <Content Include="Assets\articles\BeautifulSoup-Scraper.markdown" />
-    <Content Include="Assets\drafts\build_html.py" />
-    <Content Include="Assets\drafts\ChromeConsoleNotes.txt" />
-    <Content Include="Assets\drafts\KomodoEdit.txt" />
-    <Content Include="Assets\drafts\microsoft_html.py" />
-    <Content Include="Assets\drafts\OSWalk.py" />
-    <Content Include="Assets\drafts\vim.txt" />
-    <Content Include="Assets\drafts\WordSoup %282%29.py" />
-    <Content Include="Assets\drafts\WordSoup.py" />
     <Content Include="Assets\images\articles\062112_0427_Ivespentmuc1.png" />
     <Content Include="Assets\images\articles\062112_0427_Ivespentmuc2.png" />
     <Content Include="Assets\images\articles\062112_0427_Ivespentmuc3.png" />
@@ -160,6 +167,14 @@
     <Content Include="Assets\images\articles\062112_0427_Ivespentmuc5.png" />
     <Content Include="Assets\images\articles\062112_0427_Ivespentmuc6.png" />
     <Content Include="Assets\images\articles\062112_0427_Ivespentmuc7.png" />
+    <Content Include="Assets\images\browsers.png" />
+    <Content Include="Assets\images\carousel_01.jpg" />
+    <Content Include="Assets\images\carousel_02.jpg" />
+    <Content Include="Assets\images\carousel_03.jpg" />
+    <Content Include="Assets\images\code_background_01.jpg" />
+    <Content Include="Assets\images\code_background_02.jpg" />
+    <Content Include="Assets\images\feed-icon-14x14.png" />
+    <Content Include="Assets\images\feed-icon-28x28.png" />
     <Content Include="Assets\images\foundation\orbit\bullets.jpg" />
     <Content Include="Assets\images\foundation\orbit\left-arrow-small.png" />
     <Content Include="Assets\images\foundation\orbit\left-arrow.png" />
@@ -170,6 +185,11 @@
     <Content Include="Assets\images\foundation\orbit\right-arrow.png" />
     <Content Include="Assets\images\foundation\orbit\rotator-black.png" />
     <Content Include="Assets\images\foundation\orbit\timer-black.png" />
+    <Content Include="Assets\images\thumbnail_02.jpg" />
+    <Content Include="Assets\images\thumb_01.jpg" />
+    <Content Include="Assets\images\thumb_02.jpg" />
+    <Content Include="Assets\images\thumb_03.jpg" />
+    <Content Include="Assets\images\wa_gridview_popup.png" />
     <Content Include="Assets\javascripts\foundation\app.js" />
     <Content Include="Assets\javascripts\foundation\jquery.cookie.js" />
     <Content Include="Assets\javascripts\foundation\jquery.event.move.js" />
@@ -227,17 +247,11 @@
     <Content Include="Assets\javascripts\knockout-2.1.0.debug.js" />
     <Content Include="Assets\javascripts\knockout-2.1.0.js" />
     <Content Include="Assets\stylesheets\app.css" />
-    <Content Include="humans.txt" />
     <Content Include="MIT-LICENSE.txt" />
-    <Content Include="robots.txt" />
     <Content Include="Assets\stylesheets\main.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="README.md" />
-    <None Include="Assets\articles\Resources.markdown" />
-    <None Include="Assets\articles\Home.markdown" />
-    <Content Include="Assets\articles\Things-I-Plan-To-Do.markdown" />
-    <None Include="Assets\articles\toc.markdown" />
     <Content Include="Assets\mdd\MarkdownDeep License.txt" />
     <Content Include="Assets\mdd\MarkdownDeep Quick Reference.txt" />
     <Content Include="Assets\mdd\MarkdownDeepLib.min.js" />
@@ -264,6 +278,11 @@
     <Content Include="sass\_settings.scss" />
     <Content Include="config.rb" />
     <Content Include="sass\_foundation-settings.scss" />
+    <Content Include="Views\Articles\Index.cshtml" />
+    <Content Include="kevinbrammer.azurewebsites.net.wiki\Home.md" />
+    <Content Include="kevinbrammer.azurewebsites.net.wiki\JSON-and-httpie-in-Powershell.md" />
+    <Content Include="kevinbrammer.azurewebsites.net.wiki\Using-HtmlAgilityPack-With-Powershell.md" />
+    <Content Include="kevinbrammer.azurewebsites.net.wiki\Scraping-HTML-using-Python-and-BeautifulSoup.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\highlight.js\LICENSE" />
@@ -272,12 +291,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Assets\drafts\XMLSerialization.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

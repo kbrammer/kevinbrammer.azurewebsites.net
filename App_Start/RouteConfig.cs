@@ -20,9 +20,15 @@ namespace site
             );
 
             routes.MapRoute(
+                name: "Articles",
+                url: "Articles/{title}",
+                defaults: new { controller = "Articles", action = "Index", title = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Articles", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

@@ -1,0 +1,43 @@
+﻿<div class="row">
+    <div class="nine columns" id="content">
+        @foreach (site.Models.Article entry in ViewBag.Articles) {
+            <article>
+                <h3>@entry.Title</h3>
+                <h6>@entry.Author</h6>
+
+                @Html.Raw(entry.Content)
+                
+            </article>
+            <hr />
+        }
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'kbrammer'; 
+            var disqus_identifier = ViewBag.Title;
+            (function () {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </div>
+    <aside class="three columns">
+        <h5>All Posts</h5>
+        <ul class="side-nav">
+            @foreach (var item in ViewBag.Menu) {
+                <li><a href="~/Articles/@item.Link">@item.Title</a></li>
+            }
+        </ul>
+        <h5>About Me</h5>
+        <p>I am addicted to JavaScript, C#, Sass and Foundation... although I occassionaly get caught staying out too late with PHP, Ruby, Python and the occasional shell script...</p>
+        <p>
+            <a href="https://github.com/kbrammer/kevinbrammer.azurewebsites.net/wiki.atom">
+                <img src="~/Assets/images/feed-icon-14x14.png" />
+                Subscribe</a>
+        </p>
+    </aside>
+</div>
