@@ -1,0 +1,5 @@
+## Markdown and MVC Blogging with Windows Azure
+
+I have spent quite a lot of time lately exploring various static site generators like Jekyll, Sphinx, Punch, AsciiDoc... the list goes on, but never found one that quite fit. I really liked how [Nuget Docs](http://docs.nuget.org/) implemented a markdown based documentation site using MVC and [MarkdownDeep](http://www.toptensoftware.com/markdowndeep/), and was equally impressed with [Service Stack Docs](http://www.servicestack.net/docs/default.htm). 
+
+Rather than simply copy those sites, I decided it would be much more fun to create a similar solution from scratch for my own blog. The coolest part is by hosting the site on Windows Azure I was able to set up automatic publishing from my GitHub account. You can check out my progess [here](https://github.com/kbrammer/kevinbrammer.azurewebsites.net).
