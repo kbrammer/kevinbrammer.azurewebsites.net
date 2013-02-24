@@ -7,6 +7,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <meta property="og:title" content="@ViewBag.Title" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="@Request.Url" />
+    <meta property="og:image" content="http://www.kevinbrammer.com/assets/images/gravatar.jpg" />
+    <meta property="og:site_name" content="kevinbrammer.com" />
+    <meta property="fb:admins" content="686396970" />
     @Styles.Render("~/Assets/stylesheets/app.css")
     @Scripts.Render("~/Assets/javascripts/foundation/modernizr.foundation.js")
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
