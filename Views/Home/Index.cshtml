@@ -1,14 +1,43 @@
-﻿<div class="row">
-    <div class="nine columns" id="content">
-        <h1>Welcome</h1>
-        <p>Home page</p>
+﻿@{
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+<div class="hero">
+    <div class="row">
+        <div class="twelve columns">
+            <div class="row">
+                <div class="four columns">
+                    <h1>Kevin Brammer</h1>
+                </div>
+                <div class="eight columns callout">
+                    <p>Hi, there! I'm a web developer currently working in Houston, Texas. I've become somewhat addicted to working with <a href="http://knockoutjs.com/" title="Knockout.js">Model-View-View Model</a> based JavaScript UIs and <a href="http://foundation.zurb.com/" title="Zurb Foundation">responsive front end frameworks</a>, although I have also been guilty of staying out too late with ASP.NET, PHP, Ruby, and Python...</p>
+                </div>
+            </div>
+
+        </div>
     </div>
-    <aside class="three columns">
-        <h5>About Me</h5>
-        <p>I am addicted to JavaScript, C#, Sass and Foundation... although I occassionaly get caught staying out too late with PHP, Ruby, Python and the occasional shell script...</p>
-        <p><a href="https://github.com/kbrammer/kevinbrammer.azurewebsites.net/wiki.atom">
-            <img src="~/Assets/images/feed-icon-14x14.png" />
-            Subscribe</a></p>
-    </aside>
 </div>
 
+<div class="row">
+    <div class="twelve columns">
+        <div class="row buttons">
+
+            <div class="four columns">
+                <div class="panel radius custom">
+                    <h3><a href="https://github.com/kbrammer">Code.</a></h3>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="panel radius">
+                    <h3><a href="http://www.linkedin.com/in/kevinbrammer">Work.</a></h3>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="panel radius">
+                    <h3><a href="http://www.facebook.com/kevinmatthewbrammer">Play.</a></h3>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

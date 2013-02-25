@@ -2,7 +2,7 @@
     <div class="nine columns" id="content">
         @foreach (site.Models.Article entry in ViewBag.Articles) {
             <article>
-                <h3>@entry.Title</h3>
+                <h1>@entry.Title</h1>
                 <h6>@entry.Author</h6>
 
                 @Html.Raw(entry.Content)
@@ -36,12 +36,8 @@
                 <li><a href="~/Articles/@item.Link">@item.Title</a></li>
             }
         </ul>
-        <h5>About Me</h5>
-        <p>I am addicted to JavaScript, C#, Sass and Foundation... although I occassionaly get caught staying out too late with PHP, Ruby, Python and the occasional shell script...</p>
         <p>
-            <a href="https://github.com/kbrammer/kevinbrammer.azurewebsites.net/wiki.atom">
-                <img src="~/Assets/images/feed-icon-14x14.png" />
-                Subscribe</a>
+            <a href="https://github.com/kbrammer/kevinbrammer.azurewebsites.net/wiki.atom"><img src="~/Assets/images/feed-icon-28x28.png" /></a>
         </p>
     </aside>
 </div>
