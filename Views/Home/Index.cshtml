@@ -38,6 +38,27 @@
             </div>
 
         </div>
+    </div>
+</div>
 
+<div class="row">
+    <div class="twelve columns">
+        <h6>Nothing to see here... please move along.</h6>
+        <div id="repo-events" class="panel radius" data-bind="foreach: ghevents">
+            <img src="#" data-bind="attr: { src: actor.avatar_url }" style="height:20px;" />
+            <span data-bind="text:type"></span>
+            <span data-bind="text:id"></span>
+            <span data-bind="text:created_at"></span>
+            <div data-bind="foreach:payload.commits">
+                <a href="#" data-bind="attr: { href: url }, text:message"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <div class="row">
+    <div class="twelve columns">
+        <h6>Debug JS View Model</h6>
+        <pre><code data-bind="text: ko.toJSON($root, null, 2)"></code></pre>
     </div>
 </div>

@@ -148,16 +148,19 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\GitHubAPIController.cs" />
+    <Compile Include="Controllers\GitHubController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Article.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\Blog.cs" />
+    <Compile Include="Models\GitHub.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ArticleService.cs" />
+    <Compile Include="Services\MarkdownService.cs" />
+    <Compile Include="Services\WikiService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\images\articles\062112_0427_Ivespentmuc1.png" />
@@ -185,11 +188,14 @@
     <Content Include="Assets\images\foundation\orbit\right-arrow.png" />
     <Content Include="Assets\images\foundation\orbit\rotator-black.png" />
     <Content Include="Assets\images\foundation\orbit\timer-black.png" />
+    <Content Include="Assets\images\gravatar.jpeg" />
+    <Content Include="Assets\images\soundcloud.png" />
     <Content Include="Assets\images\thumbnail_02.jpg" />
     <Content Include="Assets\images\thumb_01.jpg" />
     <Content Include="Assets\images\thumb_02.jpg" />
     <Content Include="Assets\images\thumb_03.jpg" />
     <Content Include="Assets\images\wa_gridview_popup.png" />
+    <Content Include="Assets\javascripts\home.js" />
     <Content Include="Assets\javascripts\foundation\app.js" />
     <Content Include="Assets\javascripts\foundation\jquery.cookie.js" />
     <Content Include="Assets\javascripts\foundation\jquery.event.move.js" />
@@ -247,9 +253,9 @@
     <Content Include="Assets\javascripts\knockout-2.1.0.debug.js" />
     <Content Include="Assets\javascripts\knockout-2.1.0.js" />
     <Content Include="Assets\stylesheets\app.css" />
+    <Content Include="favicon.ico" />
     <Content Include="MIT-LICENSE.txt" />
     <Content Include="Assets\stylesheets\main.css" />
-    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="README.md" />
     <Content Include="Assets\mdd\MarkdownDeep License.txt" />
@@ -299,6 +305,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Docs\Using-HtmlAgilityPack-With-Powershell.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LayoutHome.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
