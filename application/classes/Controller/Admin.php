@@ -134,5 +134,10 @@ class Controller_Admin extends Controller_Base {
 			$test->content = Arr::get($_POST, 'content');
 		}
 	}
+
+	public function auction_phpinfo(){
+		$content = View::factory('admin/phpinfo');
+		$this->template->content = $content;
+	}
 	
 } 
