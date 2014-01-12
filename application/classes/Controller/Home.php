@@ -13,6 +13,8 @@ class Controller_Home extends Controller_Base {
 	public function before()
 	{
 		parent::before();
+
+		View::set_global('page_title','Kevin Brammer &gt; Home');
 		$this->template->carousel = View::factory('includes/carousel');
 	}
 
