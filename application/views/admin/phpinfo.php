@@ -2,7 +2,7 @@
 	<div class="col-md-12">
 		<pre>
 		<?php
-			// phpinfo(); 
+			phpinfo(); 
 		?>
 		</pre>
 	</div>

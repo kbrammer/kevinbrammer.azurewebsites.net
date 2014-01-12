@@ -135,7 +135,7 @@ class Controller_Admin extends Controller_Base {
 		}
 	}
 
-	public function auction_phpinfo(){
+	public function action_phpinfo(){
 		$content = View::factory('admin/phpinfo');
 		$this->template->content = $content;
 	}
