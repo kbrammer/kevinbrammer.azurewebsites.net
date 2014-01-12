@@ -65,7 +65,7 @@ class Controller_Blog extends Controller_Base {
 				->find();
 
 			if($post->loaded()){
-				View::set_global('page_title','Kevin Brammer &gt; Blog &gt;' . $post->title);
+				View::set_global('page_title','Kevin Brammer &gt; Blog &gt; ' . $post->title);
 				$this->template->content = $content;		
 			} else {
 				$this->redirect('home/index', 302);	
