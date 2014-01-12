@@ -15,7 +15,8 @@
 			<ul class="nav navbar-nav">
 				<!-- <li <?= Request::current()->action() == 'index' ? 'class="active"' : '' ?>><a href="<?= URL::base() ?>home">Home</a></li> -->
 				<!-- <li <?= Request::current()->action() == 'about' ? 'class="active"' : '' ?>><a href="<?= URL::base() ?>home/about">About</a></li> -->
-				<li <?= Request::current()->action() == 'blog' ? 'class="active"' : '' ?>><a href="<?= URL::base() ?>blog">Blog</a></li>
+				<li <?= Request::current()->controller() == 'Blog' ? 'class="active"' : '' ?>><a href="<?= URL::base() ?>blog">Blog</a></li>
+				<li <?= Request::current()->action() == 'music' ? 'class="active"' : '' ?>><a href="<?= URL::base() ?>music">Local Music</a></li>
 			</ul>
 		</div><!--/.nav-collapse -->
 

@@ -121,7 +121,7 @@ if (isset($_SERVER['KOHANA_ENV']))
 if($_SERVER['SERVER_NAME'] === 'localhost') 
 {
 	Kohana::init(array(
-		'base_url'   => '/kevinbrammerkohana/',
+		'base_url'   => '/kevinbrammer.azurewebsites.net/',
 		'index_file' => FALSE,
 		'errors' => TRUE
 	));

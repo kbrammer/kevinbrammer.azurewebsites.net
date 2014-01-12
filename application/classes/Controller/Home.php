@@ -28,5 +28,12 @@ class Controller_Home extends Controller_Base {
 
 		$this->template->content = $content;
 	}
+
+	public function action_music()
+	{
+		$this->template->carousel = '';
+		$content = View::factory('home/music');
+		$this->template->content = $content;
+	}
 	
 } 

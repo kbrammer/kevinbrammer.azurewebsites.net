@@ -5979,7 +5979,7 @@ hr {
 }
 @media (max-width: 767px) {
   .carousel {
-    height: 200px;
+    height: 250px;
   }
 }
 @media (min-width: 768px) {
