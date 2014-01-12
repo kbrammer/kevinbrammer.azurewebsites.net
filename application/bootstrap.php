@@ -127,7 +127,7 @@ if($_SERVER['SERVER_NAME'] === 'localhost')
 	));
 } else {
 	Kohana::init(array(
-		'base_url'   => '/test/',
+		'base_url'   => '/',
 		'index_file' => FALSE,
 		'errors' => TRUE
 	));
