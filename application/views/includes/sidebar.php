@@ -6,7 +6,7 @@
   </span>
   <input type="text" name="search" class="form-control" placeholder="Search for...">
   <span class="input-group-btn">
-    <button class="btn btn-default" type="button">Go!</button>
+    <button class="btn btn-default" type="submit">Go!</button>
   </span>
 </div>
 <?php echo Form::close(); ?>
