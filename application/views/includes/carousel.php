@@ -5,7 +5,7 @@
         <li data-target="#brammer-carousel" data-slide-to="1"></li>
         <li data-target="#brammer-carousel" data-slide-to="2"></li>
         <li data-target="#brammer-carousel" data-slide-to="3"></li>
-        <li data-target="#brammer-carousel" data-slide-to="4"></li>
+        <!-- <li data-target="#brammer-carousel" data-slide-to="4"></li> -->
       </ol>
 
       <div class="carousel-inner">
@@ -57,7 +57,7 @@
           </div>
         </div>
 
-        <div class="item">
+       <!--  <div class="item">
           <img src="<?= URL::base() ?>assets/images/skatepark.jpg" alt="At the skatepark" title="At the skatepark" />
           <div class="container">
             <div class="carousel-caption">
@@ -65,7 +65,7 @@
               <p>It's what I do best.</p>
             </div>
           </div>
-        </div>
+        </div> -->
 
       </div>
       <!-- <a class="left carousel-control" href="#brammer-carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> -->
