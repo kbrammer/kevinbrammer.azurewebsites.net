@@ -46,7 +46,7 @@ class Controller_Blog extends Controller_Base {
 
 		if($search !== '') {
 			$posts = ORM::factory('Post')
-				->where('post_title','LIKE','%'.$search.'%')
+				->where('title','LIKE','%'.$search.'%')
 				->where('status', '=', 'published')
 				->find_all();
 		} else {
