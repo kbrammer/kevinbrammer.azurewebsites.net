@@ -5977,6 +5977,11 @@ hr {
 .carousel {
   margin-bottom: 20px;
 }
+@media (max-width: 767px) {
+  .carousel {
+    height: 350px;
+  }
+}
 @media (min-width: 768px) {
   .carousel {
     height: 350px;
@@ -6035,6 +6040,11 @@ hr {
 .carousel .item {
   background-color: #777;
 }
+@media (max-width: 767px) {
+  .carousel .item {
+    height: 350px;
+  }
+}
 @media (min-width: 768px) {
   .carousel .item {
     height: 350px;
@@ -6055,6 +6065,11 @@ hr {
   top: 0;
   left: 0;
   min-width: 100%;
+}
+@media (max-width: 767px) {
+  .carousel-inner > .item > img {
+    height: 350px;
+  }
 }
 @media (min-width: 768px) {
   .carousel-inner > .item > img {
