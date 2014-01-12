@@ -31,7 +31,8 @@ class Controller_Home extends Controller_Base {
 
 	public function action_music()
 	{
-		$this->template->carousel = '';
+		View::set_global('page_title','Kevin Brammer &gt; Home &gt; Local Music'); // set page title
+		$this->template->carousel = ''; // hide the carousel
 		$content = View::factory('home/music');
 		$this->template->content = $content;
 	}

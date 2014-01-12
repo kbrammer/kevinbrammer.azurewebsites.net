@@ -54,8 +54,6 @@ class Controller_Blog extends Controller_Base {
 
 		if($id != '') {
 
-			
-
 			$content = View::factory('blog/detail')
 			->bind('post', $post);
 			
