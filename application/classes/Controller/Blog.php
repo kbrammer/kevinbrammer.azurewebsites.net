@@ -31,6 +31,9 @@ class Controller_Blog extends Controller_Base {
 	 */
     public function action_index()
 	{
+
+		View::set_global('page_title','Kevin Brammer &gt; Blog');
+
 		$content = View::factory('blog/index')
 			->bind('posts', $posts);
 		
@@ -50,6 +53,9 @@ class Controller_Blog extends Controller_Base {
 		$id = Request::current()->param('id');
 
 		if($id != '') {
+
+			
+
 			$content = View::factory('blog/detail')
 			->bind('post', $post);
 			
@@ -58,8 +64,8 @@ class Controller_Blog extends Controller_Base {
 				->where('url_title', '=', $id)
 				->find();
 
-
-			if($post->content != ''){
+			if($post->loaded()){
+				View::set_global('page_title','Kevin Brammer &gt; Blog &gt;' . $post->title);
 				$this->template->content = $content;		
 			} else {
 				$this->redirect('home/index', 302);	
