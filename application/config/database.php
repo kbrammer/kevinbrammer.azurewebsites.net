@@ -4,7 +4,7 @@
 	(
 		'default' => array
 		(
-			'type'       => 'MySQL',
+			'type'       => 'PDO',
 			'connection' => array(
 				/**
 				 * The following options are available for MySQL:
