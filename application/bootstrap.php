@@ -118,7 +118,7 @@ if (isset($_SERVER['KOHANA_ENV']))
  * - boolean  caching     enable or disable internal caching                 FALSE
  * - boolean  expose      set the X-Powered-By header                        FALSE
  */
-if($_SERVER['SERVER_NAME'] === 'localhost') 
+if(Kohana::$environment === Kohana::DEVELOPMENT) 
 {
 	Kohana::init(array(
 		'base_url'   => '/kevinbrammer.azurewebsites.net/',
@@ -159,7 +159,7 @@ Kohana::$config->attach(new Config_File);
  */
 Kohana::modules(array(
 	'auth'       => MODPATH.'auth',       // Basic authentication
-	// 'cache'      => MODPATH.'cache',      // Caching with multiple backends
+	'cache'      => MODPATH.'cache',      // Caching with multiple backends
 	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
 	'database'   => MODPATH.'database',   // Database access
 	'image'      => MODPATH.'image',      // Image manipulation
