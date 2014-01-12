@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') OR die('No direct access allowed.');
 /**
- * wp_posts
+ * Post model
  */
 class Model_Post extends ORM {
 
@@ -10,6 +10,7 @@ class Model_Post extends ORM {
 	/**
 	 * list_columns is used for ORM to get all the columns in a table when they are not specified. 
 	 * To get around this, you can specify the table columns in the _table_columns protected property:
+	 * http://stackoverflow.com/questions/7314739/kohana-3-2-orm-and-pdo
 	 * @var array
 	 */
 	protected $_table_columns = array(
