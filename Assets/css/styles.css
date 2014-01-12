@@ -5979,7 +5979,7 @@ hr {
 }
 @media (max-width: 767px) {
   .carousel {
-    height: 350px;
+    height: 300px;
   }
 }
 @media (min-width: 768px) {
@@ -6042,7 +6042,7 @@ hr {
 }
 @media (max-width: 767px) {
   .carousel .item {
-    height: 350px;
+    height: 300px;
   }
 }
 @media (min-width: 768px) {
@@ -6068,7 +6068,7 @@ hr {
 }
 @media (max-width: 767px) {
   .carousel-inner > .item > img {
-    height: 350px;
+    height: 300px;
   }
 }
 @media (min-width: 768px) {
