@@ -1,0 +1,10 @@
+Using HtmlAgilityPack With Powershell
+
+
+<img width="624" height="253" src="http://www.kevinbrammer.com/posts/wp-content/uploads/2013/05/htmagilitypack-powershell-624x253.png" class="attachment-post-thumbnail wp-post-image" alt="HTMLAgilityPack and Powershell">	<p>I started experimenting with using assemblies in the Powershell ISE, and just discovered an awesome way to grab HTML from a website using&nbsp;<a href="http://htmlagilitypack.codeplex.com/" target="_blank">HtmlAgilityPack</a>!!</p>
+<p>Don't forget to include the full path to your assembly:</p>
+<pre><code>[Reflection.Assembly]::LoadFile("C:\Users\...\...\Assemblies\HtmlAgilityPack.dll")
+[HtmlAgilityPack.HtmlWeb]$web = @{}
+[HtmlAgilityPack.HtmlDocument]$doc = $web.Load("http://www.example.org")
+[HtmlAgilityPack.HtmlNodeCollection]$nodes = $doc.DocumentNode.SelectNodes("//meta")
+$nodes | ForEach-Object { $_.OuterHtml }</code></pre>

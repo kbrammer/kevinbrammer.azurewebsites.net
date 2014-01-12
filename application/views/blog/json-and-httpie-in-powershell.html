@@ -1,0 +1,17 @@
+JSON and httpie in Powershell
+
+C:\wamp\www\kevinbrammerkohana\application\views\blog\json-and-httpie-in-powershell.html
+
+<p>Here's another quick example on how to call an API using&nbsp;<a href="https://github.com/jkbr/httpie" target="_blank">httpie</a>&nbsp;and parse the JSON results in&nbsp;<a href="http://www.microsoft.com/en-us/download/details.aspx?id=29939" target="_blank">Powershell 3.0</a>&nbsp;using&nbsp;<a href="http://technet.microsoft.com/en-us/library/hh849922.aspx" target="_blank">ConvertTo-Json</a>:</p>
+<pre><code class="php"><span class="variable">$json</span> = @{}
+<span class="variable">$c</span> = @{}
+<span class="keyword">try</span> {
+<span class="variable">$json</span> = http https:<span class="comment">//api.github.com/repos/kbrammer/kevinbrammer.azurewebsites.net/contents | ConvertFrom-Json</span>
+
+<span class="comment">#NOTE: you may need to convert to json more than once</span>
+<span class="comment">#$d = $json.d | ConvertFrom-Json</span>
+
+<span class="variable">$json</span> | <span class="keyword">ForEach</span>-Object { <span class="variable">$_</span>.name + <span class="string">"`t"</span> + <span class="variable">$_</span>.url }
+} <span class="keyword">catch</span> {
+Write-Host <span class="string">"Oops"</span>
+}</code></pre>

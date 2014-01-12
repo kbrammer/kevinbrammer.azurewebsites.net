@@ -1,0 +1,88 @@
+<?php defined('SYSPATH') OR die('No direct script access.'); ?>
+
+2014-01-08 20:30:41 --- CRITICAL: Database_Exception [ 1054 ]: Unknown column 'post_title' in 'group statement' [ SELECT `post`.`id` AS `id`, `post`.`author` AS `author`, `post`.`date` AS `date`, `post`.`title` AS `title`, `post`.`excerpt` AS `excerpt`, `post`.`content` AS `content`, `post`.`status` AS `status` FROM `posts` AS `post` GROUP BY `post_title` ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in C:\wamp\www\kevinbrammerkohana\modules\database\classes\Kohana\Database\Query.php:251
+2014-01-08 20:30:41 --- DEBUG: #0 C:\wamp\www\kevinbrammerkohana\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(1, 'SELECT `post`.`...', 'Model_Post', Array)
+#1 C:\wamp\www\kevinbrammerkohana\modules\orm\classes\Kohana\ORM.php(1063): Kohana_Database_Query->execute(Object(Database_MySQL))
+#2 C:\wamp\www\kevinbrammerkohana\modules\orm\classes\Kohana\ORM.php(1004): Kohana_ORM->_load_result(true)
+#3 C:\wamp\www\kevinbrammerkohana\application\classes\Controller\Home.php(43): Kohana_ORM->find_all()
+#4 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Controller.php(84): Controller_Home->action_index()
+#5 [internal function]: Kohana_Controller->execute()
+#6 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Home))
+#7 C:\wamp\www\kevinbrammerkohana\application\classes\Request\Client\Internal.php(30): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Request\Client.php(114): Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#9 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#10 C:\wamp\www\kevinbrammerkohana\index.php(118): Kohana_Request->execute()
+#11 {main} in C:\wamp\www\kevinbrammerkohana\modules\database\classes\Kohana\Database\Query.php:251
+2014-01-08 20:35:42 --- CRITICAL: Kohana_Exception [ 0 ]: The post_title property does not exist in the Model_Post class ~ MODPATH\orm\classes\Kohana\ORM.php [ 687 ] in C:\wamp\www\kevinbrammerkohana\modules\orm\classes\Kohana\ORM.php:603
+2014-01-08 20:35:42 --- DEBUG: #0 C:\wamp\www\kevinbrammerkohana\modules\orm\classes\Kohana\ORM.php(603): Kohana_ORM->get('post_title')
+#1 C:\wamp\www\kevinbrammerkohana\application\views\home\index.php(6): Kohana_ORM->__get('post_title')
+#2 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\View.php(61): include('C:\wamp\www\kev...')
+#3 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\View.php(348): Kohana_View::capture('C:\wamp\www\kev...', Array)
+#4 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\View.php(228): Kohana_View->render()
+#5 C:\wamp\www\kevinbrammerkohana\application\views\template.php(36): Kohana_View->__toString()
+#6 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\View.php(61): include('C:\wamp\www\kev...')
+#7 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\View.php(348): Kohana_View::capture('C:\wamp\www\kev...', Array)
+#8 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Controller\Template.php(44): Kohana_View->render()
+#9 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Controller.php(87): Kohana_Controller_Template->after()
+#10 [internal function]: Kohana_Controller->execute()
+#11 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Home))
+#12 C:\wamp\www\kevinbrammerkohana\application\classes\Request\Client\Internal.php(30): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#13 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Request\Client.php(114): Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#14 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#15 C:\wamp\www\kevinbrammerkohana\index.php(118): Kohana_Request->execute()
+#16 {main} in C:\wamp\www\kevinbrammerkohana\modules\orm\classes\Kohana\ORM.php:603
+2014-01-08 20:36:33 --- CRITICAL: Kohana_Exception [ 0 ]: The post_content property does not exist in the Model_Post class ~ MODPATH\orm\classes\Kohana\ORM.php [ 687 ] in C:\wamp\www\kevinbrammerkohana\modules\orm\classes\Kohana\ORM.php:603
+2014-01-08 20:36:33 --- DEBUG: #0 C:\wamp\www\kevinbrammerkohana\modules\orm\classes\Kohana\ORM.php(603): Kohana_ORM->get('post_content')
+#1 C:\wamp\www\kevinbrammerkohana\application\views\home\index.php(7): Kohana_ORM->__get('post_content')
+#2 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\View.php(61): include('C:\wamp\www\kev...')
+#3 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\View.php(348): Kohana_View::capture('C:\wamp\www\kev...', Array)
+#4 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\View.php(228): Kohana_View->render()
+#5 C:\wamp\www\kevinbrammerkohana\application\views\template.php(36): Kohana_View->__toString()
+#6 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\View.php(61): include('C:\wamp\www\kev...')
+#7 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\View.php(348): Kohana_View::capture('C:\wamp\www\kev...', Array)
+#8 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Controller\Template.php(44): Kohana_View->render()
+#9 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Controller.php(87): Kohana_Controller_Template->after()
+#10 [internal function]: Kohana_Controller->execute()
+#11 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Home))
+#12 C:\wamp\www\kevinbrammerkohana\application\classes\Request\Client\Internal.php(30): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#13 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Request\Client.php(114): Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#14 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#15 C:\wamp\www\kevinbrammerkohana\index.php(118): Kohana_Request->execute()
+#16 {main} in C:\wamp\www\kevinbrammerkohana\modules\orm\classes\Kohana\ORM.php:603
+2014-01-08 20:46:28 --- CRITICAL: ErrorException [ 2 ]: Missing argument 1 for Controller_Home::action_detail(), called in C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Controller.php on line 84 and defined ~ APPPATH\classes\Controller\Home.php [ 49 ] in C:\wamp\www\kevinbrammerkohana\application\classes\Controller\Home.php:49
+2014-01-08 20:46:28 --- DEBUG: #0 C:\wamp\www\kevinbrammerkohana\application\classes\Controller\Home.php(49): Kohana_Core::error_handler(2, 'Missing argumen...', 'C:\wamp\www\kev...', 49, Array)
+#1 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Controller.php(84): Controller_Home->action_detail()
+#2 [internal function]: Kohana_Controller->execute()
+#3 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Home))
+#4 C:\wamp\www\kevinbrammerkohana\application\classes\Request\Client\Internal.php(30): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Request\Client.php(114): Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 C:\wamp\www\kevinbrammerkohana\index.php(118): Kohana_Request->execute()
+#8 {main} in C:\wamp\www\kevinbrammerkohana\application\classes\Controller\Home.php:49
+2014-01-08 20:47:53 --- CRITICAL: ErrorException [ 1 ]: Call to undefined method Request::params() ~ APPPATH\classes\Controller\Home.php [ 56 ] in file:line
+2014-01-08 20:47:53 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-01-08 20:51:05 --- CRITICAL: Kohana_Exception [ 0 ]: Invalid redirect code '404' ~ SYSPATH\classes\Kohana\HTTP.php [ 36 ] in C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Controller.php:127
+2014-01-08 20:51:05 --- DEBUG: #0 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Controller.php(127): Kohana_HTTP::redirect('home/index', 404)
+#1 C:\wamp\www\kevinbrammerkohana\application\classes\Controller\Home.php(64): Kohana_Controller::redirect('home/index', 404)
+#2 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Controller.php(84): Controller_Home->action_detail()
+#3 [internal function]: Kohana_Controller->execute()
+#4 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Home))
+#5 C:\wamp\www\kevinbrammerkohana\application\classes\Request\Client\Internal.php(30): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Request\Client.php(114): Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#8 C:\wamp\www\kevinbrammerkohana\index.php(118): Kohana_Request->execute()
+#9 {main} in C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Controller.php:127
+2014-01-08 20:55:27 --- CRITICAL: ErrorException [ 8 ]: Undefined variable: content ~ APPPATH\views\template.php [ 36 ] in C:\wamp\www\kevinbrammerkohana\application\views\template.php:36
+2014-01-08 20:55:27 --- DEBUG: #0 C:\wamp\www\kevinbrammerkohana\application\views\template.php(36): Kohana_Core::error_handler(8, 'Undefined varia...', 'C:\wamp\www\kev...', 36, Array)
+#1 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\View.php(61): include('C:\wamp\www\kev...')
+#2 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\View.php(348): Kohana_View::capture('C:\wamp\www\kev...', Array)
+#3 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Controller\Template.php(44): Kohana_View->render()
+#4 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Controller.php(87): Kohana_Controller_Template->after()
+#5 [internal function]: Kohana_Controller->execute()
+#6 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Home))
+#7 C:\wamp\www\kevinbrammerkohana\application\classes\Request\Client\Internal.php(30): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Request\Client.php(114): Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#9 C:\wamp\www\kevinbrammerkohana\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#10 C:\wamp\www\kevinbrammerkohana\index.php(118): Kohana_Request->execute()
+#11 {main} in C:\wamp\www\kevinbrammerkohana\application\views\template.php:36
