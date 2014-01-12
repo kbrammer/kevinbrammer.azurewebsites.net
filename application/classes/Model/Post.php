@@ -7,6 +7,22 @@ class Model_Post extends ORM {
 	// protected $_table_name = 'wp_posts';
 	// protected $_primary_key = 'ID';
 	
+	/**
+	 * list_columns is used for ORM to get all the columns in a table when they are not specified. 
+	 * To get around this, you can specify the table columns in the _table_columns protected property:
+	 * @var array
+	 */
+	protected $_table_columns = array(
+	    'id' => NULL,
+		'author' => NULL,
+		'date' => NULL,
+		'title' => NULL,
+		'url_title' => NULL,
+		'excerpt' => NULL,
+		'content' => NULL,
+		'status' => NULL,
+	  ); 
+	
 	// Access a post's author by using code like $post->author 
 	// protected $_belongs_to = array('user' => array());
 	protected $_belongs_to = array(
