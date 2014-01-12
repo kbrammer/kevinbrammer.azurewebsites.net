@@ -41,19 +41,6 @@ class Controller_Admin extends Controller_Base {
 		$posts = ORM::factory('Post')->find_all();
 		$this->template->content = $content;
 	}
-
-	/*
-	Parameters
-	Parameters are accessed by calling $this->request->param('name') where name is the name defined in the route.
-
-	?
-	// Assuming Route::set('example','<controller>(/<action>(/<id>(/<new>)))');
-	 
-	public function action_foobar()
-	{
-	    $id = $this->request->param('id');
-	    $new = $this->request->param('new');
-	 */
 	
 	/**
 	 * Edit post
@@ -96,17 +83,9 @@ class Controller_Admin extends Controller_Base {
 		}
 	}
 
-	/**
-	 * Create post
-	 */
-   /* public function action_create()
-	{
-		$content = View::factory('admin/create');
-		$this->template->content = $content;
-	}*/
 
 	/**
-	 * Create post
+	 * Delete post
 	 */
     public function action_delete()
 	{
@@ -121,7 +100,10 @@ class Controller_Admin extends Controller_Base {
 		$this->redirect('admin/index');
 	}
 
-	public function action_test(){
+	/**
+	 * Just for testing stuff...
+	 */
+	/*public function action_test(){
 
 		
 		$content = View::factory('admin/test')
@@ -133,8 +115,11 @@ class Controller_Admin extends Controller_Base {
 			$test = ORM::factory('Post');
 			$test->content = Arr::get($_POST, 'content');
 		}
-	}
+	}*/
 
+	/**
+	 * Show PHP info
+	 */
 	public function action_phpinfo(){
 		$content = View::factory('admin/phpinfo');
 		$this->template->content = $content;

@@ -1,79 +1,86 @@
 <?php
-// suppress strict errors
-libxml_use_internal_errors(true);
+// Cache results for 720 minutes
+if ( ! Fragment::load('fitz', Date::MINUTE * 720, true) )
+{
+	// suppress strict errors
+	libxml_use_internal_errors(true);
 
-function getDOM($html){
-	$dom = new DOMDocument;
-	$dom->loadHTML($html);
-	return $dom;
-}
+	function getDOM($html){
+		$dom = new DOMDocument;
+		$dom->loadHTML($html);
+		return $dom;
+	}
 
-function getNodes($dom, $xpath){
-	$xpath_query = new DOMXPath($dom);
-	$nodeList = $xpath_query->query($xpath);
-	return $nodeList;
-}
+	function getNodes($dom, $xpath){
+		$xpath_query = new DOMXPath($dom);
+		$nodeList = $xpath_query->query($xpath);
+		return $nodeList;
+	}
 
-function getHTMLXpath($html, $xpath){
+	function getHTMLXpath($html, $xpath){
+		
+		$dom = new DOMDocument;
+		$dom->loadHTML($html);
+
+		$xpath_query = new DOMXPath($dom);
+		$nodeList = $xpath_query->query($xpath);
+		$result = "";
+		foreach ($nodeList as $node) {
+			$result .= $dom->saveHtml($node);
+		}
+		return $result;
+	}
+
+	// get HTML
+	$uri = 'http://fitzlivemusic.com/shows.php';
+	$request = Request::factory($uri);
+	$response = $request->execute();
+	// $html = file_get_contents(__DIR__.'\test.html');
+	$html = $response->body();
+
+	// get DOM
+	$dom = getDOM($html);
+
+	// get event nodes
+	$nodes = getNodes($dom, '//td[@class = "stubwire_eventbox_middle"]');
+	?>
+	<h2>Local Music</h2>
+
+	<h3>Shows at Fitz</h3>
+	<p><a href="http://fitzlivemusic.com/">http://fitzlivemusic.com/</a></p>
 	
-	$dom = new DOMDocument;
-	$dom->loadHTML($html);
+	<table class="table">
+		<thead>
+			<th>Date</th>
+			<th>Event</th>
+		</thead>
+		<tbody>
+		<?php
+		foreach($nodes as $event) {
+			$event_html = $dom->saveHtml($event);
+			// echo HTML::chars($event_html);
+			echo '<tr>';
+			$weekday = getHTMLXpath($event_html,'//div[@class = "stubwire_eventbox_eventdate"]/span[@class="weekday"]');
+			$day = getHTMLXpath($event_html,'//div[@class = "stubwire_eventbox_eventdate"]/span[@class="day"]');
+			$month = getHTMLXpath($event_html,'//div[@class = "stubwire_eventbox_eventdate"]/span[@class="month"]');
+			$showtime = getHTMLXpath($event_html,'//div[@class = "stubwire_eventbox_eventdate"]/span[@class="showtime"]');
+			$link_node = getHTMLXpath($event_html,'//div[@class = "stubwire_eventbox_eventname"]/a');
 
-	$xpath_query = new DOMXPath($dom);
-	$nodeList = $xpath_query->query($xpath);
-	$result = "";
-	foreach ($nodeList as $node) {
-		$result .= $dom->saveHtml($node);
-	}
-	return $result;
-}
-
-// get HTML
-$uri = 'http://fitzlivemusic.com/shows.php';
-$request = Request::factory($uri);
-$response = $request->execute();
-// $html = file_get_contents(__DIR__.'\test.html');
-$html = $response->body();
-
-// get DOM
-$dom = getDOM($html);
-
-// get event nodes
-$nodes = getNodes($dom, '//td[@class = "stubwire_eventbox_middle"]');
-?>
-<h2>Local Music</h2>
-
-<h3>Shows at Fitz</h3>
-<p><a href="http://fitzlivemusic.com/">http://fitzlivemusic.com/</a></p>
-<table class="table">
-<thead>
-	<th>Date</th>
-	<th>Event</th>
-</thead>
-<tbody>
-<?php
-foreach($nodes as $event) {
-	$event_html = $dom->saveHtml($event);
-	// echo HTML::chars($event_html);
-	echo '<tr>';
-	$weekday = getHTMLXpath($event_html,'//div[@class = "stubwire_eventbox_eventdate"]/span[@class="weekday"]');
-	$day = getHTMLXpath($event_html,'//div[@class = "stubwire_eventbox_eventdate"]/span[@class="day"]');
-	$month = getHTMLXpath($event_html,'//div[@class = "stubwire_eventbox_eventdate"]/span[@class="month"]');
-	$showtime = getHTMLXpath($event_html,'//div[@class = "stubwire_eventbox_eventdate"]/span[@class="showtime"]');
-	$link_node = getHTMLXpath($event_html,'//div[@class = "stubwire_eventbox_eventname"]/a');
-
-	if($weekday.$day.$month.$showtime != '') {
-		$date = $weekday.', '.$day.', '.$month.', '.$showtime; 
-		echo '<td>'.$date.'</td><td>'.$link_node.'</td>'.PHP_EOL;	
-	}
-	echo '</tr>';
-}
-?>
-</tbody>
-</table>
+			if($weekday.$day.$month.$showtime != '') {
+				$date = $weekday.', '.$day.', '.$month.', '.$showtime; 
+				echo '<td>'.$date.'</td><td>'.$link_node.'</td>'.PHP_EOL;	
+			}
+			echo '</tr>';
+		}
+		?>
+		</tbody>
+	</table>
 
 <?php
 
+    // Anything that is echo'ed here will be saved
+    Fragment::save();
+}
 
 /*
 $dom = new DOMDocument;

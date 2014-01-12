@@ -184,3 +184,15 @@ Route::set('default', '(<controller>(/<action>(/<id>)))')
 		'controller' => 'home',
 		'action'     => 'index',
 	));
+/*
+Parameters
+Parameters are accessed by calling $this->request->param('name') where name is the name defined in the route.
+
+?
+// Assuming Route::set('example','<controller>(/<action>(/<id>(/<new>)))');
+ 
+public function action_foobar()
+{
+    $id = $this->request->param('id');
+    $new = $this->request->param('new');
+ */
