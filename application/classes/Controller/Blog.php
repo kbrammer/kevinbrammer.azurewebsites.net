@@ -33,9 +33,21 @@ class Controller_Blog extends Controller_Base {
 	{
 
 		View::set_global('page_title','Kevin Brammer &gt; Blog');
+		
+		$search = '';
 
-		$content = View::factory('blog/index')
-			->bind('posts', $posts);
+		if($this->request->method() === Kohana_Request::POST) {
+			$search = HTML::chars(Arr::get($_POST, 'search'));
+		}
+		
+		if($search !== '') {
+			$content = View::factory('blog/index')
+				->where('post_title','LIKE','%'.$search.'%')
+				->bind('posts', $posts);
+		} else {
+			$content = View::factory('blog/index')
+				->bind('posts', $posts);
+		}
 		
 		//TODO: limit by date range, add paging
 		$posts = ORM::factory('Post')
@@ -73,4 +85,6 @@ class Controller_Blog extends Controller_Base {
 		}
 		
 	}
+
+
 }

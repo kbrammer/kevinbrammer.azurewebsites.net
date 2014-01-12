@@ -1,14 +1,15 @@
+<?php echo Form::open(); ?>
 <!-- <p>Search for:</p> -->
 <div class="input-group">
   <span class="input-group-addon">
     <span class="glyphicon glyphicon-search"></span>
   </span>
-
-  <input type="text" class="form-control" placeholder="Search for...">
+  <input type="text" name="search" class="form-control" placeholder="Search for...">
   <span class="input-group-btn">
     <button class="btn btn-default" type="button">Go!</button>
   </span>
 </div>
+<?php echo Form::close(); ?>
 
 <h3>Recent Posts</h3>
 <ul class="list-unstyled">
