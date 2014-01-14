@@ -88,29 +88,7 @@ class Controller_Blog extends Controller_Base {
 	}
 
 	public function action_feed(){
-		$info = array(
-           'title' => 'Dark into the Narwhal',
-           'pubDate' => date("D, d M Y H:i:s T"),
-           'description' => 'Eating bacon, taking names and leaving fortunes',
-           'link' => 'http://example.com/',
-           'copyright' => 'The Narwhal Peon',
-           'language' => 'en-us',
-           'ttl' => '7200',
-        );
-
-		$items = array(
-           array(
-               'title' => 'We journey with watermelon helmets',
-               'link' => 'blog/journey-with-watermelon-helmets',
-               'description' => 'Dawn breaks and the wind follows soon after. 
-                                 We have found our supplies run low.',
-           ),
-
-            //-- and the other posts you want to include
-         ); 
-
-		$xml = Feed::create($info, $items);
-		$this->response->body($xml);
+		$this->redirect('feed/rss');
 	}
 
 
