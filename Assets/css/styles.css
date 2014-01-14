@@ -5972,6 +5972,19 @@ hr {
 .container .sidebar {
   margin-top: 20px;
 }
+.navbar-default {
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #e7e7e7 100%);
+  background-image: linear-gradient(to bottom, #ffffff 0%, #e7e7e7 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe7e7e7', GradientType=0);
+  border-color: #ccc;
+}
+.navbar-default .navbar-nav > .active > a {
+  background-image: -webkit-linear-gradient(top, #e6e6e6 0%, #cecece 100%);
+  background-image: linear-gradient(to bottom, #e6e6e6 0%, #cecece 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe6e6e6', endColorstr='#ffcecece', GradientType=0);
+}
 /* CAROUSEL
 -------------------------------------------------- */
 .carousel {
