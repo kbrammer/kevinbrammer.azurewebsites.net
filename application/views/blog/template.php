@@ -14,13 +14,13 @@
   <meta property="og:image" content="http://kevinbrammer.com<?= URL::site('assets/images/gravatar.jpg') ?>" />
   <meta property="og:site_name" content="kevinbrammer.com" />
   
-  <link rel="stylesheet" href="<?= URL::base()?>assets/css/styles.css">
-  <link rel="stylesheet" href="<?= URL::base() ?>assets/js/highlight.js/styles/default.css">
-  <link rel="shortcut icon" href="<?= URL::base() ?>assets/ico/fav.png">
+  <link rel="stylesheet" href="<?= URL::site('assets/css/styles.css')?>">
+  <link rel="stylesheet" href="<?= URL::site('assets/js/highlight.js/styles/default.css')?>">
+  <link rel="shortcut icon" href="<?= URL::site('assets/ico/fav.png')?>">
 
   <!--[if lt IE 9]>
-  <script src="<?= URL::base()?>assets/js/html5shiv.js"></script>
-  <script src="<?= URL::base()?>assets/js/respond.min.js"></script>
+  <script src="<?= URL::site('assets/js/html5shiv.js')?>"></script>
+  <script src="<?= URL::site('assets/js/respond.min.js')?>"></script>
   <![endif]-->  
 </head>
 <body>
@@ -56,8 +56,8 @@
   </div> <!-- /container -->
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="<?= URL::base() ?>assets/js/bootstrap.min.js"></script>
-  <script src="<?= URL::base() ?>assets/js/highlight.js/highlight.pack.js"></script>
+  <script src="<?= URL::site('assets/js/bootstrap.min.js')?>"></script>
+  <script src="<?= URL::site('assets/js/highlight.js/highlight.pack.js')?>"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

@@ -11,4 +11,3 @@ This project intends to be a (hopefully) simple, straightforward Markdown bloggi
 - Twitter Bootstrap responsive layout
 - Less
 - Commenting with Disqus
-
