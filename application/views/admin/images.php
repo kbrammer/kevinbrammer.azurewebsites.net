@@ -24,6 +24,7 @@
 	?>
 	<div class="col-md-4">
 		<a href="<?= URL::site($full_name) ?>"><?= HTML::image($full_name, array('class' => 'img-thumbnail gallery')) ?></a>
+		<a href="<?= URL::site('admin/delete_image/'.$file_name) ?>">Delete</a>
 		<!-- <?= Form::input(NULL, URL::site($full_name), array('class' => 'form-control')) ?> -->
 	</div>
 	<?php endforeach; ?>

@@ -174,7 +174,12 @@ class Controller_Admin extends Controller_Base {
         return FALSE;
     }
 
-    
+    public function action_delete_image()
+    {
+    	$image = DOCROOT.'uploads'.DIRECTORY_SEPARATOR.$this->request->param('id');
+    	unlink($image);
+    	$this->redirect('admin/images');
+    }
 
 	/**
 	 * Show PHP info
