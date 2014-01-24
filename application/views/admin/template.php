@@ -40,7 +40,5 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="<?= URL::site('assets/js/bootstrap.min.js') ?>"></script>
-  <script src="<?= URL::site('assets/js/dropzone.js/dropzone.min.js') ?>"></script>
-
 </body>
 </html>

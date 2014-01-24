@@ -66,6 +66,8 @@
 </div>
 
 <script src="<?= URL::site('assets/js/ace/ace.js') ?>" type="text/javascript" charset="utf-8"></script>
+<script src="<?= URL::site('assets/js/dropzone.js/dropzone.min.js') ?>"></script>
+
 <script>
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/xcode");
@@ -114,4 +116,5 @@
 
 	})
 </script>
+
 
