@@ -108,33 +108,37 @@ class Controller_Admin extends Controller_Base {
 	*/
 	public function action_upload()
     {
-    	$this->response->headers('Content-Type','application/json');
-
-        $result = array();
- 
+    	
         if ($this->request->method() == Request::POST)
         {
+        	$result = array();
+
             if (isset($_FILES['file']))
             {
                 $filename = $this->_save_image($_FILES['file']);
-                $result[] = array(
+            }
+
+            if ( ! $filename)
+	        {
+	        	$result[] = array(
+	            	'filename' => '',
+	            	'msg' => 'There was a problem while uploading the image. Make sure it is uploaded and must be JPG/PNG/GIF file.',
+	            );
+	        }
+	        else
+	        {
+	        	$result[] = array(
                 	'filename' => $filename,
                 	'msg' => 'Success!',
-                );
-            }
+                );	
+	        }
+
+	        header('Content-Type: application/json');
+	        echo json_encode($result);
+	        exit;
         }
  
-        if ( ! $filename)
-        {
-        	$result[] = array(
-            	'filename' => '',
-            	'msg' => 'There was a problem while uploading the image. Make sure it is uploaded and must be JPG/PNG/GIF file.',
-            );
-        }
-        
-        echo json_encode($result);
-
-        exit;
+        $this->redirect('admin/index');        
     }
  
     protected function _save_image($image)
