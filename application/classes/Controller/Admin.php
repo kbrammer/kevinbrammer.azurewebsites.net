@@ -107,15 +107,55 @@ class Controller_Admin extends Controller_Base {
 	* Upload Image
 	*/
 	public function action_upload()
-	{
-		if($this->request->method() === Kohana_Request::POST)
-		{
-			// get file
-			$this->response->headers('Content-Type','text');
-			print_r($this->request->post());
-			exit;
-		}
-	}
+    {
+    	$this->response->headers('Content-Type','application/json');
+        $result = array();
+ 
+        if ($this->request->method() == Request::POST)
+        {
+            if (isset($_FILES['avatar']))
+            {
+                $filename = $this->_save_image($_FILES['file']);
+            }
+        }
+ 
+        if ( ! $filename)
+        {
+            $result['msg'] = 'There was a problem while uploading the image. Make sure it is uploaded and must be JPG/PNG/GIF file.';
+        }
+ 
+        
+        $this->response->body(json_encode($result));
+    }
+ 
+    protected function _save_image($image)
+    {
+        if (
+            ! Upload::valid($image) OR
+            ! Upload::not_empty($image) OR
+            ! Upload::type($image, array('jpg', 'jpeg', 'png', 'gif')))
+        {
+            return FALSE;
+        }
+ 
+        $directory = DOCROOT.'uploads'.DIRECTORY_SEPARATOR;
+ 
+        if ($file = Upload::save($image, NULL, $directory))
+        {
+            $filename = strtolower(Text::random('alnum', 20)).'.jpg';
+ 
+            Image::factory($file)
+                ->resize(200, 200, Image::AUTO)
+                ->save($directory.$filename);
+ 
+            // Delete the temporary file
+            unlink($file);
+ 
+            return $filename;
+        }
+ 
+        return FALSE;
+    }
 
 	/**
 	 * Just for testing stuff...
