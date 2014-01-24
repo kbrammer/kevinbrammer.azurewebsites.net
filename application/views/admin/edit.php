@@ -41,7 +41,15 @@
 		<?php echo Form::submit(NULL, 'Save', array('class' => 'btn btn-primary pull-right', 'id' => 'save_post')); ?>
 
 		<?php echo Form::close(); ?>
+
 		<br>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<?php echo Form::open(NULL, array('id'=>'image-upload', 'class' => 'dropzone')); ?>
+		<?php echo Form::close(); ?>
 	</div>
 </div>
 
