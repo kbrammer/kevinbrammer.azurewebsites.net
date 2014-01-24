@@ -60,7 +60,8 @@ class Controller_Admin extends Controller_Base {
 
 		$this->template->content = $content;
 
-		if($this->request->method() === Kohana_Request::POST) {
+		if($this->request->method() === Kohana_Request::POST) 
+		{
 			try
 			{
 				$post->date = date('Y-m-d');
@@ -90,14 +91,30 @@ class Controller_Admin extends Controller_Base {
     public function action_delete()
 	{
 		$id = Request::current()->param('id');
+
 		$post = ORM::factory('Post')
 			->where('url_title', '=', $id)
 			->find();
+
 		if($post->loaded()){
 			$post->delete();	
 		}
 		
 		$this->redirect('admin/index');
+	}
+
+	/**
+	* Upload Image
+	*/
+	public function action_upload()
+	{
+		if($this->request->method() === Kohana_Request::POST)
+		{
+			// get file
+			$this->response->headers('Content-Type','text');
+			print_r($this->request->post());
+			exit;
+		}
 	}
 
 	/**
@@ -120,7 +137,8 @@ class Controller_Admin extends Controller_Base {
 	/**
 	 * Show PHP info
 	 */
-	public function action_phpinfo(){
+	public function action_phpinfo()
+	{
 		$content = View::factory('admin/phpinfo');
 		$this->template->content = $content;
 	}

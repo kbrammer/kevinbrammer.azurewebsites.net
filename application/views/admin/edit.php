@@ -46,13 +46,6 @@
 	</div>
 </div>
 
-<div class="row">
-	<div class="col-md-12">
-		<?php echo Form::open(NULL, array('id'=>'image-upload', 'class' => 'dropzone')); ?>
-		<?php echo Form::close(); ?>
-	</div>
-</div>
-
 <?php if(Kohana::$environment === Kohana::DEVELOPMENT && Request::current()->method() === Kohana_Request::POST): ?>
 <div class="row">
 	<div class="col-md-12">
@@ -65,7 +58,7 @@
 </div>
 <?php endif; ?>
 
-<script src="<?= URL::base() ?>assets/js/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="<?= URL::site('assets/js/ace/ace.js') ?>" type="text/javascript" charset="utf-8"></script>
 <script>
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/xcode");
@@ -91,3 +84,10 @@
     	// return false;
     };
 </script>
+
+<div class="row">
+	<div class="col-md-12">
+		<?php echo Form::open(URL::site('admin/upload'), array('id'=>'image-upload', 'class' => 'dropzone')); ?>
+		<?php echo Form::close(); ?>
+	</div>
+</div>
