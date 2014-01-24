@@ -158,7 +158,7 @@ class Controller_Admin extends Controller_Base {
             $thumb = Image::factory($file)
             	->resize(300, NULL, Image::AUTO);
             	// ->save($directory.$file.'_thumb.jpg');
-            $thumb->save($directory.$file.'-'.$thumb->width.'x'.$thumb->height.'.jpg');
+            $thumb->save($directory.$image.'-'.$thumb->width.'x'.$thumb->height.'.jpg');
  
             // Delete the temporary file
             // unlink($file);
