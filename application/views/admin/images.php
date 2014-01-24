@@ -10,7 +10,7 @@
 	<div class="col-md-12">
 		<?= Form::open('admin/images', array('enctype' => 'multipart/form-data')) ?>
 		<?= Form::file('file') ?>
-		<?= Form::submit(NULL, 'Save', array('class' => 'btn btn-primary', 'style' => 'margin: 20px 0;')) ?>
+		<?= Form::submit('action', 'Save', array('class' => 'btn btn-primary', 'style' => 'margin: 20px 0;')) ?>
 		<?= Form::close() ?>
 	</div>
 </div>
@@ -24,7 +24,7 @@
 	?>
 	<div class="col-md-4">
 		<a href="<?= URL::site($full_name) ?>"><?= HTML::image($full_name, array('class' => 'img-thumbnail gallery')) ?></a>
-		<a href="<?= URL::site('admin/delete-image/'.$file_name) ?>">Delete</a>
+		<!-- <a href="<?= URL::site('admin/deleteimage/'.$file_name) ?>">Delete</a> -->
 		<!-- <?= Form::input(NULL, URL::site($full_name), array('class' => 'form-control')) ?> -->
 	</div>
 	<?php endforeach; ?>

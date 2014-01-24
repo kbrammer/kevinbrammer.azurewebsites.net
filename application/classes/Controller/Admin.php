@@ -112,14 +112,12 @@ class Controller_Admin extends Controller_Base {
 
     	if ($this->request->method() == Request::POST)
         {
-        	
-        	if (isset($_FILES['file']))
-            {
-            	// print_r($_FILES);
-                $filename = $this->_save_image($_FILES['file']);
-            }
+			if (isset($_FILES['file']))
+	        {
+	            $filename = $this->_save_image($_FILES['file']);
+	        }
 
-            if ( ! $filename)
+	        if ( ! $filename)
 	        {
 	        	$message = 'There was a problem while uploading the image. Make sure it is uploaded and must be JPG/PNG/GIF file.';
 	        }
@@ -127,7 +125,6 @@ class Controller_Admin extends Controller_Base {
 	        {
 	        	$message =  'Success!';
 	        }
-
         }
 
     	$content = View::factory('admin/images')
@@ -177,15 +174,17 @@ class Controller_Admin extends Controller_Base {
     /**
     * Delete image
     */
-    public function action_delete_image()
+    /*public function action_deleteimage()
     {	
     	$file_name = $this->request->param('id');
+
     	if(isset($file_name))
     	{
     		try
     		{
 				$image = DOCROOT.'uploads'.DIRECTORY_SEPARATOR.$file_name;
-    			unlink($image);
+				$message = $image;
+    			// unlink($image);
     		}
     		catch(Exception $e)
     		{
@@ -194,8 +193,12 @@ class Controller_Admin extends Controller_Base {
     		
     	}
     	
-    	$this->redirect('admin/images');
-    }
+    	$content = View::factory('admin/deleteimage')
+    		->bind('message', $message);
+
+		$this->template->content = $content;
+    	// $this->redirect('admin/images');
+    }*/
 
 	/**
 	 * Show PHP info
