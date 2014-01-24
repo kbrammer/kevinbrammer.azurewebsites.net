@@ -1,0 +1,3 @@
+# Kohana Files
+application/cache/*
+application/logs/*
