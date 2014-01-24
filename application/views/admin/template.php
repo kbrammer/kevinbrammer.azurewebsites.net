@@ -11,7 +11,8 @@
 
   <link rel="stylesheet" href="<?= URL::site('assets/css/styles.css')?>">   
   <link rel="shortcut icon" href="<?= URL::site('assets/ico/fav.png') ?>">
-
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="<?= URL::site('assets/js/bootstrap.min.js') ?>"></script>
   <!--[if lt IE 9]>
   <script src="<?= URL::site('assets/js/html5shiv.js')?>"></script>
   <script src="<?= URL::site('assets/js/respond.min.js')?>"></script>
@@ -37,8 +38,5 @@
     <?php echo $footer; ?>
 
   </div> <!-- /container -->
-
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="<?= URL::site('assets/js/bootstrap.min.js') ?>"></script>
 </body>
 </html>
