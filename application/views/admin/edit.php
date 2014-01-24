@@ -60,7 +60,7 @@
 
 <div class="row">
 	<div class="col-md-12">
-		<?php echo Form::open(URL::site('admin/upload'), array('id'=>'image-upload')); ?>
+		<?php echo Form::open(URL::site('admin/upload'), array('id'=>'image-upload', 'class' => 'dropzone')); ?>
 		<?php echo Form::close(); ?>
 	</div>
 </div>
