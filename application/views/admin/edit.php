@@ -58,6 +58,13 @@
 </div>
 <?php endif; ?>
 
+<div class="row">
+	<div class="col-md-12">
+		<?php echo Form::open(URL::site('admin/upload'), array('id'=>'image-upload')); ?>
+		<?php echo Form::close(); ?>
+	</div>
+</div>
+
 <script src="<?= URL::site('assets/js/ace/ace.js') ?>" type="text/javascript" charset="utf-8"></script>
 <script>
     var editor = ace.edit("editor");
@@ -79,15 +86,32 @@
     
     // when save is clicked, update textarea with value from ace
     save_button.onclick = function(e){
-    	// e.preventDefault();
     	post_content.value = editor.getValue();
-    	// return false;
     };
+
+    // The recommended way from within the init configuration:
+	Dropzone.options.myAwesomeDropzone = {
+	  init: function() {
+	    this.on("addedfile", function(file) { alert("Added file."); });
+	  }
+	};
+	
+	// Disabling autoDiscover, otherwise Dropzone will try to attach twice.
+	Dropzone.autoDiscover = false;
+
+	$(function() {
+	  // Now that the DOM is fully loaded, create the dropzone, and setup the event listeners
+	  var myDropzone = new Dropzone("#image-upload");
+
+	  myDropzone.on("addedfile", function(file) {
+	    console.log(file);
+	  });
+
+	  myDropzone.on("success", function(file, data) {
+	    console.log(file);
+	    console.log(data);
+	  });
+
+	})
 </script>
 
-<div class="row">
-	<div class="col-md-12">
-		<?php echo Form::open(URL::site('admin/upload'), array('id'=>'image-upload', 'class' => 'dropzone')); ?>
-		<?php echo Form::close(); ?>
-	</div>
-</div>
