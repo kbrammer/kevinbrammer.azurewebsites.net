@@ -109,6 +109,7 @@ class Controller_Admin extends Controller_Base {
 	public function action_upload()
     {
     	$this->response->headers('Content-Type','application/json');
+
         $result = array();
  
         if ($this->request->method() == Request::POST)
@@ -116,17 +117,24 @@ class Controller_Admin extends Controller_Base {
             if (isset($_FILES['file']))
             {
                 $filename = $this->_save_image($_FILES['file']);
-                $result['filename'] = $filename;
+                $result[] = array(
+                	'filename' => $filename,
+                	'msg' => 'Success!',
+                );
             }
         }
  
         if ( ! $filename)
         {
-            $result['msg'] = 'There was a problem while uploading the image. Make sure it is uploaded and must be JPG/PNG/GIF file.';
+        	$result[] = array(
+            	'filename' => '',
+            	'msg' => 'There was a problem while uploading the image. Make sure it is uploaded and must be JPG/PNG/GIF file.',
+            );
         }
- 
         
-        $this->response->body(json_encode($result));
+        echo json_encode($result);
+
+        exit;
     }
  
     protected function _save_image($image)
@@ -146,7 +154,7 @@ class Controller_Admin extends Controller_Base {
             $filename = strtolower(Text::random('alnum', 20)).'.jpg';
  
             Image::factory($file)
-                ->resize(200, 200, Image::AUTO)
+                ->resize(600, NULL, Image::AUTO)
                 ->save($directory.$filename);
  
             // Delete the temporary file
