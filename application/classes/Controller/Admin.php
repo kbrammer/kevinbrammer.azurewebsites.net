@@ -174,10 +174,18 @@ class Controller_Admin extends Controller_Base {
         return FALSE;
     }
 
+    /**
+    * Delete image
+    */
     public function action_delete_image()
-    {
-    	$image = DOCROOT.'uploads'.DIRECTORY_SEPARATOR.$this->request->param('id');
-    	unlink($image);
+    {	
+    	$file_name = $this->request->param('id');
+    	if($file_name !== '')
+    	{
+    		$image = DOCROOT.'uploads'.DIRECTORY_SEPARATOR.$file_name;
+    		unlink($image);
+    	}
+    	
     	$this->redirect('admin/images');
     }
 
