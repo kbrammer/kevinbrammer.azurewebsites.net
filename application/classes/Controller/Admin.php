@@ -180,10 +180,18 @@ class Controller_Admin extends Controller_Base {
     public function action_delete_image()
     {	
     	$file_name = $this->request->param('id');
-    	if($file_name !== '')
+    	if(isset($file_name))
     	{
-    		$image = DOCROOT.'uploads'.DIRECTORY_SEPARATOR.$file_name;
-    		unlink($image);
+    		try
+    		{
+				$image = DOCROOT.'uploads'.DIRECTORY_SEPARATOR.$file_name;
+    			unlink($image);
+    		}
+    		catch(Exception $e)
+    		{
+    			//
+    		}
+    		
     	}
     	
     	$this->redirect('admin/images');
