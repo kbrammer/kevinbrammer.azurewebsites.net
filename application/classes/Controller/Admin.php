@@ -113,9 +113,10 @@ class Controller_Admin extends Controller_Base {
  
         if ($this->request->method() == Request::POST)
         {
-            if (isset($_FILES['avatar']))
+            if (isset($_FILES['file']))
             {
                 $filename = $this->_save_image($_FILES['file']);
+                $result['filename'] = $filename;
             }
         }
  
