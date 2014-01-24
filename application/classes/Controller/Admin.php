@@ -154,14 +154,19 @@ class Controller_Admin extends Controller_Base {
         if ($file = Upload::save($image, NULL, $directory))
         {
             $filename = strtolower(Text::random('alnum', 20)).'.jpg';
-            print_r($file);
+            
+            $img = Image::factory($file)
+            	->resize(800, NULL, Image::AUTO);
+            
+            $img->save($directory.$filename.'_'.$img->width.'x'.$img->height.'.jpg');
+
             $thumb = Image::factory($file)
             	->resize(300, NULL, Image::AUTO);
             
             $thumb->save($directory.$filename.'_'.$thumb->width.'x'.$thumb->height.'.jpg');
  
             // Delete the temporary file
-            // unlink($file);
+            unlink($file);
  
             return URL::site('uploads/'.$filename);
         }
