@@ -5985,6 +5985,30 @@ hr {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe6e6e6', endColorstr='#ffcecece', GradientType=0);
 }
+@media (max-width: 767px) {
+  img.gallery {
+    max-width: 350px;
+    max-height: 300px;
+  }
+}
+@media (min-width: 768px) {
+  img.gallery {
+    max-width: 350px;
+    max-height: 300px;
+  }
+}
+@media (min-width: 992px) {
+  img.gallery {
+    max-width: 235px;
+    max-height: 235px;
+  }
+}
+@media (min-width: 1200px) {
+  img.gallery {
+    max-width: 275px;
+    max-height: 250px;
+  }
+}
 /* CAROUSEL
 -------------------------------------------------- */
 .carousel {

@@ -104,50 +104,48 @@ class Controller_Admin extends Controller_Base {
 	}
 
 	/**
-	* Upload Image
-	*/
-	public function action_upload()
+	 * Show images
+	 */
+    public function action_images()
     {
-    	
-        if ($this->request->method() == Request::POST)
-        {
-        	$result = array();
+    	$message = '';
 
-            if (isset($_FILES['file']))
+    	if ($this->request->method() == Request::POST)
+        {
+        	
+        	if (isset($_FILES['file']))
             {
+            	// print_r($_FILES);
                 $filename = $this->_save_image($_FILES['file']);
             }
 
             if ( ! $filename)
 	        {
-	        	$result[] = array(
-	            	'filename' => '',
-	            	'msg' => 'There was a problem while uploading the image. Make sure it is uploaded and must be JPG/PNG/GIF file.',
-	            );
+	        	$message = 'There was a problem while uploading the image. Make sure it is uploaded and must be JPG/PNG/GIF file.';
 	        }
 	        else
 	        {
-	        	$result[] = array(
-                	'filename' => $filename,
-                	'msg' => 'Success!',
-                );	
+	        	$message =  'Success!';
 	        }
 
-	        header('Content-Type: application/json');
-	        echo json_encode($result);
-	        exit;
         }
- 
-        $this->redirect('admin/index');        
+
+    	$content = View::factory('admin/images')
+    		->bind('message', $message);
+
+		$this->template->content = $content;
     }
- 
+ 	
+ 	/**
+	 * Save image to uploads folder
+	 */
     protected function _save_image($image)
     {
         if (
             ! Upload::valid($image) OR
             ! Upload::not_empty($image) OR
             ! Upload::type($image, array('jpg', 'jpeg', 'png', 'gif')))
-        {
+        {        	
             return FALSE;
         }
  
@@ -155,14 +153,15 @@ class Controller_Admin extends Controller_Base {
  
         if ($file = Upload::save($image, NULL, $directory))
         {
-            $filename = strtolower(Text::random('alnum', 20)).'.jpg';
- 
-            Image::factory($file)
-                ->resize(600, NULL, Image::AUTO)
-                ->save($directory.$filename);
+            // $filename = strtolower(Text::random('alnum', 20)).'.jpg';
+            
+            $thumb = Image::factory($file)
+            	->resize(300, NULL, Image::AUTO);
+            	// ->save($directory.$file.'_thumb.jpg');
+            $thumb->save($directory.$file.'-'.$thumb->width.'x'.$thumb->height.'.jpg');
  
             // Delete the temporary file
-            unlink($file);
+            // unlink($file);
  
             return URL::site('uploads/'.$filename);
         }
@@ -170,6 +169,17 @@ class Controller_Admin extends Controller_Base {
         return FALSE;
     }
 
+    
+
+	/**
+	 * Show PHP info
+	 */
+	public function action_phpinfo()
+	{
+		$content = View::factory('admin/phpinfo');
+		$this->template->content = $content;
+	}
+	
 	/**
 	 * Just for testing stuff...
 	 */
@@ -186,14 +196,4 @@ class Controller_Admin extends Controller_Base {
 			$test->content = Arr::get($_POST, 'content');
 		}
 	}*/
-
-	/**
-	 * Show PHP info
-	 */
-	public function action_phpinfo()
-	{
-		$content = View::factory('admin/phpinfo');
-		$this->template->content = $content;
-	}
-	
 } 

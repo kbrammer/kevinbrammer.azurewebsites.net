@@ -88,6 +88,25 @@ hr {
   }
 }
 
+img.gallery {
+  @media (max-width: (@screen-sm - 1)) {
+    max-width: 350px;
+    max-height: 300px;
+  }
+  @media (min-width: @screen-sm) {
+    max-width: 350px;
+    max-height: 300px;
+  }
+  @media (min-width: @screen-md) {
+    max-width: 235px;
+    max-height: 235px;
+  }
+  @media (min-width: @screen-lg-min) {
+    max-width: 275px;
+    max-height: 250px;
+  }
+}
+
 /* CAROUSEL
 -------------------------------------------------- */
 
