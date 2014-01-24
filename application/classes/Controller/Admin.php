@@ -164,7 +164,7 @@ class Controller_Admin extends Controller_Base {
             // Delete the temporary file
             unlink($file);
  
-            return $filename;
+            return URL::site('uploads/'.$filename);
         }
  
         return FALSE;
