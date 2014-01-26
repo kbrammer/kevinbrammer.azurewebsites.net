@@ -17,15 +17,17 @@ class Model_User extends Model_Auth_User {
 		'last_login' => NULL
 	  ); 
 
+	
+
 	/**
-	 * "Has many" relationships
+	 * A user has many tokens and roles
 	 *
-	 * The standard has_many relationship will likely fall on the other side of a belongs_to relationship.
-	 * 
-	 * @var array
+	 * @var array Relationhips
 	 */
 	protected $_has_many = array(
-		'posts' => array('model' => 'Post'),
+		'user_tokens' => array('model' => 'User_Token'),
+		'roles'       => array('model' => 'Role', 'through' => 'roles_users'),
+		'posts'       => array('model' => 'Post'),
 	);
 
 } // End User Model
