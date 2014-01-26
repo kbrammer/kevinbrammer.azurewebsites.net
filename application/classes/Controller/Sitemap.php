@@ -54,7 +54,7 @@ class Controller_Sitemap extends Controller {
 
 			foreach($posts as $post){
 				$items[] = array(
-	               'loc' => $this->base_url.'blog/'.$post->url_title, 'http'),
+	               'loc' => $this->base_url.'blog/'.$post->url_title,
 	               'lastmod' => strftime('%Y-%m-%d', strtotime($post->date)),
 	           );
 			}
