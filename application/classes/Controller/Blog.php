@@ -62,10 +62,11 @@ class Controller_Blog extends Controller_Base {
 				->where('status', '=', 'published')
 				->find_all();
 
-			if($posts->loaded()){
+			// if($posts->loaded()){
 				// Cache the results
+				// ErrorException [ Fatal Error ]: Call to undefined method Database_Result_Cached::loaded()
 				$this->cache->set('posts'.$search, $posts, Date::MINUTE * 720);
-			}
+			// }
 		}	
 
 		$this->template->content = View::factory('blog/index')
