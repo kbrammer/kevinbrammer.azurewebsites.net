@@ -11,7 +11,10 @@
 
   <link rel="stylesheet" href="<?= URL::site('assets/css/styles.css')?>">
   <link rel="shortcut icon" href="<?= URL::site('assets/ico/fav.png')?>">
-
+  <!-- <?= $host_name ?> -->
+  <?php if($host_name !== 'http://kevinbrammer.com'): ?>
+  <link rel="canonical" href="http://kevinbrammer.com<?= Request::current()->url() ?>"/>
+  <?php endif; ?>
   <!--[if lt IE 9]>
   <script src="<?= URL::site('assets/js/html5shiv.js')?>"></script>
   <script src="<?= URL::site('assets/js/respond.min.js')?>"></script>

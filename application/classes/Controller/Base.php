@@ -23,6 +23,7 @@ class Controller_Base extends Controller_Template {
 	    View::set_global('page_uri', URL::site($this->request->uri(), 'http'));
 		View::set_global('page_title','Kevin Brammer &gt; ' . ucfirst(Request::current()->controller()) . ' &gt; ' . ucfirst(Request::current()->action()));
 		View::set_global('page_name', $this->request->action());
+		View::set_global('host_name', str_replace(URL::base(), '', URL::base(TRUE)));
 
 		$this->template->navbar = View::factory('includes/navbar');
 		$this->template->footer = View::factory('includes/footer');
