@@ -1,15 +1,14 @@
 <div class="row">
 	<div class="col-md-12">
-	  <h2><?= $post->title ?></h2>
-	  <small><?= $post->user->full_name ?></small>
-	  <p><?= $post->get_content() ?></p>
-	  <!-- FB -->
-      <div class="fb-like" data-href="http://kevinbrammer.com<?= Request::current()->url() ?>" data-send="true" data-width="450" data-show-faces="true" data-font="segoe ui"></div>
-	</div>
-</div>
-<div class="row">
-	<div class="col-md-12">
-		<!-- Disqus -->
+        <h2><?= $post->title ?></h2>
+        <h3><small>Published by <?= $post->user->full_name ?> on <?= strftime('%B %d, %Y', strtotime($post->date)) ?></small></h3>
+        <hr>
+        <p><?= $post->get_content() ?></p>
+        <hr>
+        <!-- FB -->
+        <div class="fb-like" data-href="http://kevinbrammer.com<?= Request::current()->url() ?>" data-send="true" data-width="450" data-show-faces="true" data-font="segoe ui"></div>
+        <hr>
+        <!-- Disqus -->
         <div id="disqus_thread"></div>
 
         <script type="text/javascript">
