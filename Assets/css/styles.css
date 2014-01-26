@@ -6009,6 +6009,9 @@ hr {
     max-height: 250px;
   }
 }
+.subtitle {
+  margin-top: 0;
+}
 /* CAROUSEL
 -------------------------------------------------- */
 .carousel {
