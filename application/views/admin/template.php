@@ -8,10 +8,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title><?= $page_title ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="<?= URL::site('assets/css/styles.css')?>">   
   <link rel="shortcut icon" href="<?= URL::site('assets/ico/fav.png') ?>">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="<?= URL::site('assets/js/knockout-3.0.0.js') ?>"></script>
   <script src="<?= URL::site('assets/js/bootstrap.min.js') ?>"></script>
   <!--[if lt IE 9]>
   <script src="<?= URL::site('assets/js/html5shiv.js')?>"></script>

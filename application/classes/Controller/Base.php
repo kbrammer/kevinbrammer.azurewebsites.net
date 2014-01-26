@@ -26,6 +26,16 @@ class Controller_Base extends Controller_Template {
 
 		$this->template->navbar = View::factory('includes/navbar');
 		$this->template->footer = View::factory('includes/footer');
+
+		// Check for the existance of the cache driver in APPPATH/config/cache.php
+		if(Kohana::$environment === Kohana::PRODUCTION)
+		{
+			$this->cache = Arr::get(Cache::$instances, 'wincache', Cache::instance('wincache'));	
+		}
+		else
+		{
+			$this->cache = Arr::get(Cache::$instances, 'file', Cache::instance('file'));
+		}
 	}
 
 	/**

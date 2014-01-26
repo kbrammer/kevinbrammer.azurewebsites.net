@@ -173,14 +173,29 @@ Kohana::modules(array(
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
-/*Route::set('foobar', '<catcher>',array('catcher'=>'.*')) 
-    -> defaults(array(
-        'directory' => 'site',
-        'controller' => 'foobar',
-        'action' => 'foobar',
-));*/
+
+// force detail view if url includes title
+Route::set('blogtitle', 'blog/<url_title>')
+	->defaults(array(
+		'controller' => 'Blog',
+		'action'     => 'detail',
+));
+
+// catch default
+Route::set('blog', 'blog(/index)')
+	->defaults(array(
+		'controller' => 'Blog',
+		'action'     => 'index',
+));
+
+Route::set('adminimages', 'admin/images(/<action>(/<image>))')
+	->defaults(array(
+		'controller' => 'Admin_Images',
+		'action'     => 'index',
+));
+
 Route::set('default', '(<controller>(/<action>(/<id>)))')
 	->defaults(array(
-		'controller' => 'home',
+		'controller' => 'Home',
 		'action'     => 'index',
-	));
+));

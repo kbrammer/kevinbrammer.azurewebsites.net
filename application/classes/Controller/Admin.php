@@ -28,6 +28,15 @@ class Controller_Admin extends Controller_Base {
 		}
 
 		$this->template->sidebar = View::factory('includes/admin-sidebar');
+		
+		// Turn off auto-render so we don't return the entire page or have to 'exit' prematurely
+		if ($this->request->is_ajax())
+        {
+        	$this->auto_render = FALSE;
+        	$this->response->headers('Content-Type', 'application/json');
+        	// Not sure this is necessary but what the heck
+        	$this->template->content = '';
+        }
 	}
 
  	/**
@@ -84,7 +93,6 @@ class Controller_Admin extends Controller_Base {
 		}
 	}
 
-
 	/**
 	 * Delete post
 	 */
@@ -102,104 +110,7 @@ class Controller_Admin extends Controller_Base {
 		
 		$this->redirect('admin/index');
 	}
-
-	/**
-	 * Show images
-	 */
-    public function action_images()
-    {
-    	$message = '';
-
-    	if ($this->request->method() == Request::POST)
-        {
-			if (isset($_FILES['file']))
-	        {
-	            $filename = $this->_save_image($_FILES['file']);
-	        }
-
-	        if ( ! $filename)
-	        {
-	        	$message = 'There was a problem while uploading the image. Make sure it is uploaded and must be JPG/PNG/GIF file.';
-	        }
-	        else
-	        {
-	        	$message =  'Success!';
-	        }
-        }
-
-    	$content = View::factory('admin/images')
-    		->bind('message', $message);
-
-		$this->template->content = $content;
-    }
  	
- 	/**
-	 * Save image to uploads folder
-	 */
-    protected function _save_image($image)
-    {
-        if (
-            ! Upload::valid($image) OR
-            ! Upload::not_empty($image) OR
-            ! Upload::type($image, array('jpg', 'jpeg', 'png', 'gif')))
-        {        	
-            return FALSE;
-        }
- 
-        $directory = DOCROOT.'uploads'.DIRECTORY_SEPARATOR;
- 
-        if ($file = Upload::save($image, NULL, $directory))
-        {
-            $filename = strtolower(Text::random('alnum', 20)).'.jpg';
-            
-            $img = Image::factory($file)
-            	->resize(800, NULL, Image::AUTO);
-            
-            $img->save($directory.$filename.'_'.$img->width.'x'.$img->height.'.jpg');
-
-            $thumb = Image::factory($file)
-            	->resize(300, NULL, Image::AUTO);
-            
-            $thumb->save($directory.$filename.'_'.$thumb->width.'x'.$thumb->height.'.jpg');
- 
-            // Delete the temporary file
-            unlink($file);
- 
-            return URL::site('uploads/'.$filename);
-        }
- 
-        return FALSE;
-    }
-
-    /**
-    * Delete image
-    */
-    /*public function action_deleteimage()
-    {	
-    	$file_name = $this->request->param('id');
-
-    	if(isset($file_name))
-    	{
-    		try
-    		{
-				$image = DOCROOT.'uploads'.DIRECTORY_SEPARATOR.$file_name;
-				$message = $image;
-    			// unlink($image);
-    		}
-    		catch(Exception $e)
-    		{
-    			//
-    		}
-    		
-    	}
-    	
-    	$content = View::factory('admin/deleteimage')
-    		->bind('message', $message);
-
-		$this->template->content = $content;
-    	// $this->redirect('admin/images');
-    }*/
-
 	/**
 	 * Show PHP info
 	 */
