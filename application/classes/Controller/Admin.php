@@ -37,6 +37,16 @@ class Controller_Admin extends Controller_Base {
         	// Not sure this is necessary but what the heck
         	$this->template->content = '';
         }
+
+        // Check for the existance of the cache driver in APPPATH/config/cache.php
+		if(Kohana::$environment === Kohana::PRODUCTION)
+		{
+			$this->cache = Arr::get(Cache::$instances, 'wincache', Cache::instance('wincache'));
+		}
+		else
+		{
+			$this->cache = Arr::get(Cache::$instances, 'file', Cache::instance('file'));
+		}
 	}
 
  	/**
@@ -111,6 +121,25 @@ class Controller_Admin extends Controller_Base {
 		$this->redirect('admin/index');
 	}
  	
+ 	/**
+	 * Clear the cache
+	 */
+	public function action_cache()
+	{
+		$results = array();
+
+		// For each cache instance
+		foreach (Cache::$instances as $group => $instance)
+		{
+		     if ($instance->delete_all())
+		     {
+		          $results[] = $group;
+		     }
+		}
+
+		$this->template->content = View::factory('admin/cache')->bind('results', $results);
+	}
+
 	/**
 	 * Show PHP info
 	 */
