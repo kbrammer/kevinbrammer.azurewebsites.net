@@ -62,7 +62,7 @@ class Controller_Blog extends Controller_Base {
 				->where('status', '=', 'published')
 				->find_all();
 
-			if($post->loaded()){
+			if($posts->loaded()){
 				// Cache the results
 				$this->cache->set('posts'.$search, $posts, Date::MINUTE * 720);
 			}
