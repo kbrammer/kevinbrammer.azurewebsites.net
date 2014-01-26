@@ -24,13 +24,16 @@ class Model_Post extends ORM {
 		'status' => NULL,
 	  ); 
 	
-	// Access a post's author by using code like $post->author 
-	// protected $_belongs_to = array('user' => array());
+	/**
+	 * "Belongs to" relationships
+	 *
+	 * A belongs_to relation should be used when you have one model that belongs to another. 
+	 * For example, a Child model belongs_to a Parent or a Flag model belongs_to a Country.
+	 * 
+	 * @var array
+	 */
 	protected $_belongs_to = array(
-	    'user' => array(
-	        'model'       => 'user',
-	        'foreign_key' => 'id',
-	    ),
+	    'user' => array( 'model' => 'User', 'foreign_key' => 'author' ),
 	);
 
 	/**

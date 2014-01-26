@@ -5,6 +5,7 @@
 		<tr>
 			<th>Action</th>
 			<th>Date</th>
+			<th>Status</th>
 			<th>Title</th>
 			<th>Author</th>
 		</tr>
@@ -19,7 +20,8 @@
 					</div>
 				</td>
 				<td><?= strftime('%m-%d-%Y', strtotime($post->date)) ?></td>
-				<td><?= $post->title ?></a></td>
+				<td><?= ucfirst($post->status) ?></td>
+				<td><?= $post->title ?></td>
 				<td><?= $post->user->full_name ?></td>
 			</tr>
 		<?php endforeach; ?>

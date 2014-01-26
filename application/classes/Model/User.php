@@ -17,4 +17,15 @@ class Model_User extends Model_Auth_User {
 		'last_login' => NULL
 	  ); 
 
+	/**
+	 * "Has many" relationships
+	 *
+	 * The standard has_many relationship will likely fall on the other side of a belongs_to relationship.
+	 * 
+	 * @var array
+	 */
+	protected $_has_many = array(
+		'posts' => array('model' => 'Post'),
+	);
+
 } // End User Model
