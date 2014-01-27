@@ -15,6 +15,7 @@ class Controller_Error extends Controller_Base {
 	 */
     public function action_index()
 	{
+		View::set_global('page_title','Kevin Brammer | Error');
 		$content = View::factory('error/index');
 		$this->template->content = $content;
 	}
@@ -24,6 +25,7 @@ class Controller_Error extends Controller_Base {
 	 */
     public function action_404()
 	{
+		View::set_global('page_title','Kevin Brammer | 404');
 		$content = View::factory('error/not_found');
 		$this->template->content = $content;
 	}

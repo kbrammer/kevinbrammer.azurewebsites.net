@@ -43,7 +43,7 @@ class Controller_Blog extends Controller_Base {
     public function action_index()
 	{
 
-		View::set_global('page_title','Kevin Brammer &gt; Blog');
+		View::set_global('page_title','Kevin Brammer | Blog');
 		
 		// This can be a blank string since we are querying w LIKE
 		$search = HTML::chars($this->request->post('search'));
@@ -107,7 +107,7 @@ class Controller_Blog extends Controller_Base {
 			}
 		}
 		// Set title using blog post name
-		View::set_global('page_title','Kevin Brammer &gt; Blog &gt; ' . $post_detail->title);
+		View::set_global('page_title','Kevin Brammer | Blog | ' . $post_detail->title);
 		
 		$this->template->content = View::factory('blog/detail')
 			->bind('post', $post_detail);		

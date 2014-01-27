@@ -21,7 +21,7 @@ class Controller_Base extends Controller_Template {
 
 	    // set global view variables that we can use in the template as $site_name
 	    View::set_global('page_uri', URL::site($this->request->uri(), 'http'));
-		View::set_global('page_title','Kevin Brammer &gt; ' . ucfirst(Request::current()->controller()) . ' &gt; ' . ucfirst(Request::current()->action()));
+		View::set_global('page_title','Kevin Brammer | ' . ucfirst(Request::current()->controller()) . ' | ' . ucfirst(Request::current()->action()));
 		View::set_global('page_name', $this->request->action());
 		View::set_global('host_name', Arr::get($_SERVER, 'HTTP_HOST', 'kevinbrammer.com'));
 

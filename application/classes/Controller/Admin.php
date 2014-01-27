@@ -47,6 +47,8 @@ class Controller_Admin extends Controller_Base {
 		{
 			$this->cache = Arr::get(Cache::$instances, 'file', Cache::instance('file'));
 		}
+
+		View::set_global('page_title','Kevin Brammer | Admin');
 	}
 
  	/**

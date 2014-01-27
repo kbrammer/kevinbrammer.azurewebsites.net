@@ -67,6 +67,8 @@ class Controller_User extends Controller_Base {
 	 */
 	public function action_login() 
 	{
+		View::set_global('page_title','Kevin Brammer | Login');
+
 		$this->template->content = View::factory('user/login')
 			->bind('message', $message);
 		
