@@ -54,36 +54,20 @@ class Controller_Home extends Controller_Base {
 		}
 
 		// Get WarehouseLive
-		if ($cached_warehouse_events = $this->cache->get('warehouse', FALSE))
+		if ($cached_warehouse = $this->cache->get('warehouse', FALSE))
 		{
 			// Load the results from the cache
-			$warehouse_events = $cached_warehouse_events;
+			$warehouse = $cached_warehouse;
 		}
 		else
 		{
 		    
-			$warehouse_feed = new WarehouseLive();
-
-			// Replace SimpleXMLElements w empty strings so we can serialize the result
-			$warehouse_events = array();
-
-			foreach($warehouse_feed->events as $event)
-			{
-				foreach($event as $key => $value)
-				{
-					if(gettype($value) === 'object')
-					{
-						$event[$key] = "";
-					}
-				}
-
-				$warehouse_events[] = $event;
-			}
+			$warehouse = new WarehouseLive();
 
 			try
 			{
 				// Cache the results
-				$this->cache->set('warehouse', $warehouse_events, Date::MINUTE * 720);
+				$this->cache->set('warehouse', $warehouse, Date::MINUTE * 720);
 			}
 			catch(Exception $e)
 			{
@@ -95,7 +79,7 @@ class Controller_Home extends Controller_Base {
 		}
 
 		$this->template->content = View::factory('home/music')
-			->bind('warehouse_events', $warehouse_events)
+			->bind('warehouse', $warehouse)
 			->bind('fitz', $fitz);
 	}
 	

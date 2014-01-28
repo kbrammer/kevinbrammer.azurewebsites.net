@@ -27,7 +27,7 @@
 		<th>Event</th>
 	</thead>
 	<tbody>
-	<?php foreach($warehouse_events as $event): ?>
+	<?php foreach($warehouse->events as $event): ?>
 		<tr>
 			<td><?= str_replace('&lt;','',HTML::chars(substr(Arr::get($event, 'encoded', ''), 39, 13))) ?></td>
 			<td><?= HTML::anchor(Arr::get($event, 'link', ''), Arr::get($event, 'title', '')) ?></td>	

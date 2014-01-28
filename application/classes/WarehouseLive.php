@@ -14,6 +14,21 @@ class WarehouseLive {
 
 	public function __construct()
 	{
-		$this->events = Feed::parse($this->_uri);		
+		$warehouse_feed = Feed::parse($this->_uri);		
+
+		// Replace SimpleXMLElements w empty strings so we can serialize the result
+
+		foreach($warehouse_feed as $event)
+		{
+			foreach($event as $key => $value)
+			{
+				if(gettype($value) === 'object')
+				{
+					$event[$key] = "";
+				}
+			}
+
+			$this->events[] = $event;
+		}
 	}
 }
