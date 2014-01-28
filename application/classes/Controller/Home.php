@@ -14,8 +14,10 @@ class Controller_Home extends Controller_Base {
 	{
 		parent::before();
 
-		View::set_global('page_title','Kevin Brammer &gt; Home');
+		View::set_global('page_title','Kevin Brammer | Home');
 		$this->template->carousel = View::factory('includes/carousel');
+
+
 	}
 
  	/**
@@ -31,10 +33,26 @@ class Controller_Home extends Controller_Base {
 
 	public function action_music()
 	{
-		View::set_global('page_title','Kevin Brammer &gt; Home &gt; Local Music'); // set page title
+		View::set_global('page_title','Kevin Brammer | Home | Local Music'); // set page title
 		$this->template->carousel = ''; // hide the carousel
-		$content = View::factory('home/music');
-		$this->template->content = $content;
+
+		// If the cache key is available (with default value set to FALSE)
+		if ($cached_fitz = $this->cache->get('fitz', FALSE))
+		{
+			// Load the results from the cache
+			$fitz = $cached_fitz;
+		}
+		else
+		{
+		    
+			$fitz = new Fitz();
+			
+			// Cache the results
+			$this->cache->set('fitz', $fitz, Date::MINUTE * 720);
+		}
+
+		$this->template->content = View::factory('home/music')
+			->bind('fitz', $fitz);
 	}
 	
 } 
