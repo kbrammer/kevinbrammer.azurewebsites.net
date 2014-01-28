@@ -8,15 +8,12 @@
  */
 class WarehouseLive {
 
-	protected $_uri = 'http://www.frontgatetickets.com/search/feed';
-
-	protected $_html;
+	protected $_uri = 'http://www.frontgatetickets.com/search/feed/warehouse';
 
 	public $events = array();
 
 	public function __construct()
 	{
-		
-
+		$this->events = Feed::parse($this->_uri);		
 	}
 }
