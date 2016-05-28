@@ -31,9 +31,19 @@
         color: #F00;
     }
     
-    .navbar-inverse .navbar-brand {
+    .navbar-inverse a {
         color: #FFF;
         font-family: 'emulogic';
+    }
+    
+    .blink-me {
+        animation: blinker 1s linear infinite;
+    }
+    
+    @keyframes blinker {
+        50% {
+            opacity: 0.0;
+        }
     }
     </style>
 </head>
@@ -53,18 +63,15 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <!-- <ul class="nav navbar-nav">
-                    <li><button class="btn btn-inverse" id="restart-btn"><i class="glyphicon glyphicon-eject"></i></button></li>
-                    <li><button class="btn btn-inverse" id="pause-btn"><i class="glyphicon glyphicon-pause"></i></button></li>
-                </ul> -->
                 <form class="navbar-form navbar-left">
-                    <button class="btn btn-inverse" id="restart-btn"><i class="glyphicon glyphicon-eject"></i></button>
-                    <button class="btn btn-inverse" id="pause-btn"><i class="glyphicon glyphicon-pause"></i></button>
+                    <button class="btn btn-inverse" id="restart-btn" title="Restart"><i class="glyphicon glyphicon-eject"></i></button>
+                    <button class="btn btn-inverse" id="pause-btn" title="Pause"><i class="glyphicon glyphicon-pause"></i></button>
                 </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="blink-me" href="#">0 Credits</a></li>
+                </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container-fluid -->
     </nav>
     <div class="container-fluid">
         <div class="row">
