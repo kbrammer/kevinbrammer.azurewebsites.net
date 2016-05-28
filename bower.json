@@ -1,0 +1,11 @@
+{
+  "name": "ASP.NET",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.6",
+    "angular-bootstrap": "0.12.0",
+    "angular-ui-router": "~0.2.15",
+    "angular-sanitize": "1.4.6",
+    "moment": "2.10.6"
+  }
+}

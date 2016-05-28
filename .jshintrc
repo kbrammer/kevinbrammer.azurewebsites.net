@@ -1,0 +1,16 @@
+//https://raw.githubusercontent.com/jshint/jshint/master/examples/.jshintrc
+{
+    // Enforcing
+    "strict": true, // true: Requires all functions run in ES5 Strict Mode
+    "globalstrict": true, // true: Allow global "use strict" (also enables 'strict')
+
+    // Environments
+    "browser": true, // Web Browser (window, document, etc)
+    "browserify": true, // Browserify (node.js code in the browser)
+    "node": true, // Node.js
+
+    // Custom Globals - tell jshint what variables are being exported
+    "globals": {
+        "Phaser": true
+    }
+}

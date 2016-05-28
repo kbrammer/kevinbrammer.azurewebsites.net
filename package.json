@@ -1,0 +1,24 @@
+{
+  "name": "kevinbrammer.azurewebsites.net",
+  "private": true,
+  "version": "0.0.1",
+  "dependencies": {
+    "babel": "^6.5.2",
+    "babel-preset-es2015": "^6.5.0"
+  },
+  "devDependencies": {
+    "babelify": "^5.0.3",
+    "del": "^1.1.1",
+    "gulp": "~3.9.0",
+    "gulp-babel": "6.1.1",
+    "gulp-concat": "2.6.0",
+    "gulp-jshint": "^1.9.0",
+    "gulp-less": "~3.0.3",
+    "gulp-minify-html": "1.0.5",
+    "gulp-sourcemaps": "1.6.0",
+    "gulp-watch": "^4.1.0",
+    "minimist": "^1.2.0",
+    "node-less": "~1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
