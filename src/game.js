@@ -80,7 +80,27 @@
         game.paused = false;
     };
 
+    function adjust() {
+        var divgame = document.getElementById("game");
+        divgame.style.width = window.innerWidth + "px";
+        // divgame.style.height = window.innerHeight + "px";
+    }
+
+    window.addEventListener('resize', function() {
+        adjust();
+    });
+
     function create() {
+        game.input.maxPointers = 1;
+        console.log(game.scale);
+        game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+        game.scale.pageAlignHorizontally = true;
+        game.scale.pageAlignVertically = true;
+        // game.scale.setGameSize(width, height);
+        game.scale.refresh();
+        adjust();
+
+
         audio.explosion = game.add.audio('explosion');
         audio.blaster = game.add.audio('blaster');
         audio.lazer = game.add.audio('lazer');
