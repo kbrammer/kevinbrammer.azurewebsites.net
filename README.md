@@ -1,13 +1,12 @@
-﻿# Read Me
+﻿# kevinbrammer.azurewebsites.net
 
-## My Personal Website
-
-This project intends to be a (hopefully) simple, straightforward Markdown blogging solution for my personal website using PHP and Windows Azure.
+My personsal website: [kevinbrammer.com](http://www.kevinbrammer.com)
 
 ## Features
 
-- Automatic deployments to Windows Azure
-- Highlight.js syntax highlighting
-- Twitter Bootstrap responsive layout
-- Less
-- Commenting with Disqus
+- Having fun with Phaser.io at the moment.
+- Bootstrap, gulpjs, Babel... the usual suspects
+
+## License 
+
+MIT
