@@ -2,7 +2,7 @@
 
 My personsal website: [kevinbrammer.com](http://www.kevinbrammer.com)
 
-![alt text](https://raw.githubusercontent.com/kbrammer/kevinbrammer.azurewebsites.net/master/assets/artwork/space-ship-lg.svg "Set Phasers to Stun")
+![alt text](https://raw.githubusercontent.com/kbrammer/kevinbrammer.azurewebsites.net/master/assets/images/space-ship-lg.png "Set Phasers to Stun")
 
 
 ## Features
