@@ -185,6 +185,10 @@
         //  And some controls to play the game with
         cursors = game.input.keyboard.createCursorKeys();
         fireButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+
+        game.input.onTap.add(function () {
+            fireBullet();
+        }, self);
     }
 
     function start() {
